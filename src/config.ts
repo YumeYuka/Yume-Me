@@ -1,10 +1,11 @@
 import type {
-  LicenseConfig,
-  NavBarConfig,
-  ProfileConfig,
-  SiteConfig,
-} from './types/config'
-import { LinkPreset } from './types/config'
+	ExpressiveCodeConfig,
+	LicenseConfig,
+	NavBarConfig,
+	ProfileConfig,
+	SiteConfig,
+} from "./types/config";
+import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
   title: 'YumeYuka',
@@ -38,17 +39,17 @@ export const siteConfig: SiteConfig = {
 }
 
 export const navBarConfig: NavBarConfig = {
-  links: [
-    LinkPreset.Home,
-    LinkPreset.Archive,
-    LinkPreset.About,
-    {
-      name: 'GitHub',
-      url: 'https://github.com/saicaca/fuwari',     // Internal links should not include the base path, as it is automatically added
-      external: true,                               // Show an external link icon and will open in a new tab
-    },
-  ],
-}
+	links: [
+		LinkPreset.Home,
+		LinkPreset.Archive,
+		LinkPreset.About,
+		{
+			name: "GitHub",
+			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
+			external: true, // Show an external link icon and will open in a new tab
+		},
+	],
+};
 
 export const profileConfig: ProfileConfig = {
   avatar: 'assets/images/YumeYuka.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
@@ -74,7 +75,13 @@ export const profileConfig: ProfileConfig = {
 }
 
 export const licenseConfig: LicenseConfig = {
-  enable: true,
-  name: 'CC BY-NC-SA 4.0',
-  url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
-}
+	enable: true,
+	name: "CC BY-NC-SA 4.0",
+	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+};
+
+export const expressiveCodeConfig: ExpressiveCodeConfig = {
+	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
+	// Please select a dark theme, as this blog theme currently only supports dark background color
+	theme: "github-dark",
+};

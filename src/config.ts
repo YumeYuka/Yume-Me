@@ -12,16 +12,16 @@ export const siteConfig: SiteConfig = {
   subtitle: 'Blog of Dreams',
   lang: 'zh_CN',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
   themeColor: {
-    hue: 350,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+    hue: 305,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
     fixed: false,     // Hide the theme color picker for visitors
   },
   banner: {
     enable: true,
-    src: 'assets/images/刻晴.png',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    src: 'assets/images/Wallpaper.png',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     position: 'top',      // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
     credit: {
       enable: true,         // Display the credit text of the banner image
-      text: '刻晴—樱花树下/Keqing',              // Credit text to be displayed
+      text: '空崎日奈',              // Credit text to be displayed
       url: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3384083852'                // (Optional) URL link to the original artwork or artist's page
     }
   },
@@ -64,12 +64,7 @@ export const profileConfig: ProfileConfig = {
     {
       name: 'QQ',
       icon: 'fa6-brands:qq',
-      url: 'https://qm.qq.com/q/wxE5SNyX5u',
-    },
-    {
-      name: 'QQ',
-      icon: 'fa6-solid:envelope',
-      url: 'mailto:acofork@foxmail.com',
+      url: 'https://qq.yumeyuka.plus',
     },
   ],
 }

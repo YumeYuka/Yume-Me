@@ -34,4 +34,4 @@ draft: false
 
 ### 版权信息
 
-本文原载于 [nightrainmilkyway.cn](https://nightrainmilkyway.cn)，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。
+本文原载于 [YumeYuka.plus](https://YumeYuka.plus)，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。

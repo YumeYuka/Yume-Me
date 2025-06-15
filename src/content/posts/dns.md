@@ -108,4 +108,4 @@ DNS协议的限制：DNS系统最早的设计是在1980年代，那个时候的�
 [为什么全球域名根服务器只能有13台？加一台给中国很难吗？](https://zhuanlan.zhihu.com/p/361668909?utm_id=0)
 ### 版权信息
 
-本文原载于 [nightrainmilkyway.cn](https://nightrainmilkyway.cn)，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。
+本文原载于 [YumeYuka.plus](https://YumeYuka.plus)，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。

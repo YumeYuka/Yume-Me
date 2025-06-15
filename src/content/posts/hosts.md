@@ -158,4 +158,4 @@ GitHub站点毕竟在国外，当dns请求时返回最快的那一个IP，但是
 [参考文献（3）-域名服务器缓存污染](https://zh.m.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93)
 ### 版权信息
 
-本文原载于 [nightrainmilkyway.cn](https://nightrainmilkyway.cn)，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。
+本文原载于 [YumeYuka.plus](https://YumeYuka.plus)，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。

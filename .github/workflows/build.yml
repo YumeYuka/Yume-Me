@@ -61,7 +61,9 @@ jobs:
           run_install: false # Disable auto-install
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: 
+          pnpm install --frozen-lockfile
+          pnpm exec playwright install --with-deps chromium
 
       - name: Run Astro Build
         run: pnpm astro build

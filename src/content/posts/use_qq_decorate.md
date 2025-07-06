@@ -2,7 +2,7 @@
 title: 使用QQ装扮
 published: 2024-08-07
 description: "QQ装扮."
-image: "https://img.nightrainmilkyway.cn/img/1723033154734.png"
+image: "https://pic.yumeyuka.plus/2025/07/1751824446577.webp"
 tags: ["QQ"]
 category: QQ
 draft: true

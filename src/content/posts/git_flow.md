@@ -2,7 +2,7 @@
 title: Git Flow是什么？为什么需要它
 published: 2024-09-24
 description: "Understanding Git Flow."
-image: "https://img.nightrainmilkyway.cn/img/ResizedImage_2024-09-24_21-39-26_2.webp"
+image: "https://pic.yumeyuka.plus/2025/07/1751824445584.webp"
 tags: ["Git"]
 category: Git
 draft: false

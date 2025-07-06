@@ -17,12 +17,12 @@ export const siteConfig: SiteConfig = {
   },
   banner: {
     enable: true,
-    src: 'assets/images/Wallpaper.png',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    src: 'assets/images/Wallpaper.webp',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     position: 'top',      // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
     credit: {
       enable: true,         // Display the credit text of the banner image
       text: '空崎日奈',              // Credit text to be displayed
-      url: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3384083852'                // (Optional) URL link to the original artwork or artist's page
+      url: 'https://pic.yumeyuka.plus/2025/07/1751825110503.webp'                // (Optional) URL link to the original artwork or artist's page
     }
   },
   toc: {

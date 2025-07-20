@@ -2,7 +2,7 @@
 title: 网易云压制模块
 published: 2025-07-07
 description: "neteaseCloudSuppression"
-image: "https://pic.yumeyuka.plus/2025/07/1751824446890.webp"
+image: "https://raw-githubusercontent-com.yumeyuka.plus/YumeYuka/PictureBed/Yume/2025/07/1751824446890.webp"
 tags: ["网易云","Music"]
 category: 网易云
 draft: false

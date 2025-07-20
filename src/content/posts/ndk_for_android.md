@@ -2,7 +2,7 @@
 title: Zerotermux-Arch linux运行NDK
 published: 2024-08-10
 description: "Arch Linux For NDK."
-image: "https://pic.yumeyuka.plus/2025/07/1751824445917.webp"
+image: "https://raw-githubusercontent-com.yumeyuka.plus/YumeYuka/PictureBed/Yume/2025/07/1751824445917.webp"
 tags: ["Termux","NDK","Android"]
 category: NDK
 draft: false

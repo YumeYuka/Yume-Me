@@ -2,7 +2,7 @@
 title: 修改hosts文件理解DNS - （下）
 published: 2024-09-26
 description: "Understanding DNS."
-image: "https://pic.yumeyuka.plus/2025/07/1751824445398.webp"
+image: "https://raw-githubusercontent-com.yumeyuka.plus/YumeYuka/PictureBed/Yume/2025/07/1751824445398.webp"
 tags: ["DNS"]
 category: DNS
 draft: false

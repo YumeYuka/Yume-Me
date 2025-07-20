@@ -2,7 +2,7 @@
 title: 修改hosts文件理解dns - (上)
 published: 2024-09-23
 description: "A Simple and Reliable Performance Scheduler."
-image: "https://pic.yumeyuka.plus/2025/07/1751824445748.webp"
+image: "https://raw-githubusercontent-com.yumeyuka.plus/YumeYuka/PictureBed/Yume/2025/07/1751824445748.webp"
 tags: ["Hosts","DNS"]
 category: Hosts
 draft: false

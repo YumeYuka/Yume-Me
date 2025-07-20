@@ -2,7 +2,7 @@
 title: vitepress 使用 banner
 published: 2025-07-06
 description: "Understanding DNS."
-image: "https://pic.yumeyuka.plus/2025/7130928587_p0.png"
+image: "https://raw-githubusercontent-com.yumeyuka.plus/YumeYuka/PictureBed/Yume/2025/7130928587_p0.png"
 tags: ["VitePress", "Banner"]
 category: VitePress
 draft: false

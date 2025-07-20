@@ -2,10 +2,10 @@
 title: Git Flow是什么？为什么需要它
 published: 2024-09-24
 description: "Understanding Git Flow."
-image: "https://pic.yumeyuka.plus/2025/07/1751824445584.webp"
+image: "https://https://raw-githubusercontent-com.yumeyuka.plus/YumeYuka/PictureBed/Yume/2025/07/1751824445584.webp"
 tags: ["Git"]
 category: Git
-draft: false
+draft: falsegit config --global --add safe.directory Y:/Github/blog
 ---
 
 

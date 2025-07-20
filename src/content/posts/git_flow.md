@@ -5,7 +5,7 @@ description: "Understanding Git Flow."
 image: "https://https://raw-githubusercontent-com.yumeyuka.plus/YumeYuka/PictureBed/Yume/2025/07/1751824445584.webp"
 tags: ["Git"]
 category: Git
-draft: falsegit config --global --add safe.directory Y:/Github/blog
+draft: false
 ---
 
 

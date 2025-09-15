@@ -8,12 +8,9 @@ category: Microcontroller
 draft: false
 ---
 
-## 准备
+### 数码管显示的一些使用的操作
 
-
-### 本源码需要配合Clion使用,keil等代码编辑器可能存在语法错误 
-
-代码中注释了部分功能,可以自行尝试
+晶体数码管按公共端极性可分为共阴极和共阳极两种。由于每次只能点亮一位，要实现多位同时显示，就必须配合锁存器以及段选、位选电路，采用动态扫描的方式。动态扫描利用人眼的视觉滞留效应，通过高速轮询各位并依次点亮，让多位数码管看起来像是同时显示。但如果刷新速度过快，切换瞬间会产生残影；速度过慢，又会出现闪烁。因此，在位选与段选切换处需加入适当的消抖延时，既能消除重影，又保证显示稳定。无论共阴极还是共阳极，原理相同，都是通过合理控制每个位的点亮时间和刷新频率，实现清晰、流畅的动态显示。
 
 
 ### 环境配置
@@ -51,44 +48,6 @@ lib_deps = C:\Users\Night\.platformio\packages\toolchain-sdcc\include
 ```
 
 
-
-## 原理图
-
-### led电路图
-![](https://i-blog.csdnimg.cn/blog_migrate/92032a3c07a5ba42d2f69da067cce1a0.png)
-
-![202411182015900.jpg](https://i-blog.csdnimg.cn/blog_migrate/49a956d5c060406675d0add2c43b13c9.png)
-
-#### 蜂鸣器
-![202411182015900.jpg](https://i-blog.csdnimg.cn/blog_migrate/b7e6629ccfe978ac3acf25d20ed9c5bf.png)
-
-![202411182015900.jpg](https://i-blog.csdnimg.cn/blog_migrate/4d66fb5d64c17021deaa22ea3c046afb.png)
-
-#### 7Ch138译码器
-![202411182015900.jpg](https://i-blog.csdnimg.cn/blog_migrate/1a1624e69faf22173f1bb58f60c2166f.png)
-
-#### 或非门
-![202411182015900.jpg](https://i-blog.csdnimg.cn/blog_migrate/5b9015bd59bd14405291b9b377a93bc8.png)
-
-#### 数码管
-![202411182015900.jpg](https://i-blog.csdnimg.cn/blog_migrate/b1a1791c6225419a233cb231517094b8.png)
-## 延时函数
-
-```c
-// 延时函数
-void Delay(unsigned int time) {
-  while (time--) {
-    DisplaySMG_Dynamic();
-  }
-}
-
-// 延时函数
-void DelaySMG(unsigned int time) {
-  while (time--)
-    ;
-}
-```
-
 ## 定时器函数
 
 ```c
@@ -109,7 +68,7 @@ void Timer0_Init() {
     TR0 = 1;      // Start Timer 0
 }
 ```
-## 数码管位选和段选函数
+## 数码管位选和段选
     
  ```c
 // 选择位
@@ -128,7 +87,7 @@ void SelectSegment(unsigned char value) {
 
 ```
 
-## 74HC573锁存器函数
+## 74HC573锁存器
 
 ```c
 void int74h573(unsigned int n) {
@@ -187,204 +146,4 @@ void DisplaySMG_Dynamic() {
   DelaySMG(500);
 }
 
-```
-
-## 完整代码 mian.c
-
-```c
-#include "mcs51/8052.h"
-#include "tool.h"
-
-typedef unsigned int u16;
-unsigned int ms_count = 0; // Millisecond counter
-
-// Timer 0 interrupt service routine
-void timer0_ISR() __interrupt(1) {
-  TH0 = 0xFC; // Reload high byte for 1ms
-  TL0 = 0x66; // Reload low byte for 1ms
-  ms_count++;
-  if (ms_count >= 1000) { // 1000ms = 1 second
-    ms_count = 0;
-    time_increase();
-    DisplaySMG_Dynamic();
-  }
-}
-
-// Initialize Timer 0
-void Timer0_Init() {
-  TMOD |= 0x01; // Set Timer 0 in mode 1 (16-bit timer mode)
-  TH0 = 0xFC;   // Load initial value for 1ms delay
-  TL0 = 0x66;
-  ET0 = 1;      // Enable Timer 0 interrupt
-  EA = 1;       // Enable global interrupts
-  TR0 = 1;      // Start Timer 0
-}
-
-
-// Main function
-int main() {
-    Timer0_Init(); // Initialize Timer 0
-    while (1) {
-        DisplaySMG_Dynamic(); // Display dynamic SMG
-    }
-}
-```
-
-## tool.h
-
-```c
-//
-// Created by NightRain on 2024/11/18.
-//
-
-#ifndef UNTITLED1_TOOL_H
-#define UNTITLED1_TOOL_H
-
-void DisplaySMG_Dynamic();
-void Delay(unsigned int time);
-void DelaySMG(unsigned int time);
-void Init74HC138(unsigned char n);
-void SelectBit(unsigned char pos);
-void SelectSegment(unsigned char value);
-void time_increase();
-#endif // UNTITLED1_TOOL_H
-```
-
-## tool.c
-
-```c
-//
-// Created by NightRain on 2024/11/18.
-//
-
-#include "tool.h"
-#include "mcs51/8052.h"
-
-// 共阳4位数码管的段码数组
-unsigned char SMG_NoDot[18] = {0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92,
-                               0x82, 0xf8, 0x80, 0x90, 0x88, 0x80,
-                               0xc6, 0xc0, 0x86, 0x8e, 0xbf, 0x7f};
-
-unsigned int hour = 0;
-unsigned int minute = 0;
-unsigned int second = 0;
-
-void DisplaySMG_Dynamic();
-void Delay(unsigned int time);
-void DelaySMG(unsigned int time);
-void Init74HC138(unsigned char n);
-void SelectBit(unsigned char pos);
-void SelectSegment(unsigned char value);
-
-// 延时函数
-void Delay(unsigned int time) {
-  while (time--) {
-    DisplaySMG_Dynamic();
-  }
-}
-
-// 延时函数
-void DelaySMG(unsigned int time) {
-  while (time--)
-    ;
-}
-
-// 选择通道，即具体选择哪个锁存器
-void Init74HC138(unsigned char n) {
-  switch (n) {
-  case 4:
-    P2 = (P2 & 0x1f) | 0x80;
-    break;
-  case 5:
-    P2 = (P2 & 0x1f) | 0xa0;
-    break;
-  case 6:
-    P2 = (P2 & 0x1f) | 0xc0;
-    break;
-  case 7:
-    P2 = (P2 & 0x1f) | 0xe0;
-    break;
-  }
-}
-
-void int74h573(unsigned int n) {
-  switch (n) {
-  case 4:
-    P2 = (P2 & 0x1f) | 0x80;
-    break;
-  case 5:
-    P2 = (P2 & 0x1f) | 0xa0;
-    break;
-  case 6:
-    P2 = (P2 & 0x1f) | 0xc0;
-    break;
-  case 7:
-    P2 = (P2 & 0x1f) | 0xe0;
-    break;
-  }
-}
-
-// 选择位
-void SelectBit(unsigned char pos) {
-  Init74HC138(6); // Open COM end
-  P0 = 0x00;      // Turn off all segments
-  DelaySMG(10);   // Short delay to eliminate shadow
-  P0 = (0x01 << pos);
-}
-
-// 选择段
-void SelectSegment(unsigned char value) {
-  Init74HC138(7); // 打开段选端
-  P0 = value;
-}
-
-void time_increase() {
-  second++;
-  if (second == 60) {
-    second = 0;
-    minute++;
-    if (minute == 60) {
-      minute = 0;
-      hour++;
-      if (hour == 24) {
-        hour = 0;
-      }
-    }
-  }
-}
-
-// 动态显示数码管
-void DisplaySMG_Dynamic() {
-  SelectBit(0);
-  SelectSegment(SMG_NoDot[hour / 10]);
-  DelaySMG(500);
-
-  SelectBit(1);
-  SelectSegment(SMG_NoDot[hour % 10]);
-  DelaySMG(500);
-
-  SelectBit(2);
-  SelectSegment(SMG_NoDot[16]);
-  DelaySMG(500);
-
-  SelectBit(3);
-  SelectSegment(SMG_NoDot[minute / 10]);
-  DelaySMG(500);
-
-  SelectBit(4);
-  SelectSegment(SMG_NoDot[minute % 10]);
-  DelaySMG(500);
-
-  SelectBit(5);
-  SelectSegment(SMG_NoDot[16]);
-  DelaySMG(500);
-
-  SelectBit(6);
-  SelectSegment(SMG_NoDot[second / 10]);
-  DelaySMG(500);
-
-  SelectBit(7);
-  SelectSegment(SMG_NoDot[second % 10]);
-  DelaySMG(500);
-}
 ```

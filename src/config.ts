@@ -16,8 +16,8 @@ export const siteConfig: SiteConfig = {
         position: 'top',      // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
         credit: {
             enable: true,         // Display the credit text of the banner image
-            text: '伊蕾娜',              // Credit text to be displayed
-            url: 'https://YumeYuka.plus'                // (Optional) URL link to the original artwork or artist's page
+            text: 'Memory Sketchbook',              // Credit text to be displayed
+            url: 'https://www.pixiv.net/artworks/113845204'                // (Optional) URL link to the original artwork or artist's page
         }
     },
     toc: {
@@ -25,11 +25,11 @@ export const siteConfig: SiteConfig = {
         depth: 3                // Maximum heading depth to show in the table, from 1 to 3
     },
     favicon: [    // Leave this array empty to use the default favicon
-        // {
-        //   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-        //   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-        //   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-        // }
+        {
+          src: '/favicon/yumeyuka.jpg',    // Path of the favicon, relative to the /public directory
+          // theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+          // sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
+        }
     ]
 }
 
@@ -39,8 +39,14 @@ export const navBarConfig: NavBarConfig = {
         LinkPreset.Archive,
         LinkPreset.About,
         {
+            name: "友链",
+            url: "/friends/", // Internal links should not include the base path, as it is automatically added
+            external: false, // Show an external link icon and will open in a new tab
+        },
+        {
             name: "GitHub",
-            url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
+            url: "https://github.com/YumeYuka/Yume-Me", // Internal links should not include the base path, as it is
+            // automatically added
             external: true, // Show an external link icon and will open in a new tab
         },
     ],
@@ -60,6 +66,11 @@ export const profileConfig: ProfileConfig = {
             name: 'QQ',
             icon: 'fa6-brands:qq',
             url: 'https://join.oom-wg.dev',
+        },
+        {
+            name: 'Tg',
+            icon: 'fa6-brands:telegram',
+            url: 'https://t.me/YumeYuka',
         },
     ],
 }

@@ -1,19 +1,10 @@
 
-<h1 align="center">梦之魔女的魔法笔记</h1>
+<h1 align="center">梦璃魔女的魔法笔记</h1>
 <div align="center">
-*Ciallo～(∠・ω< )⌒★*
+
+Ciallo～(∠・ω< )⌒★
 
 这里是游走在代码与幻想之间的见习魔女，伊雷娜大人的忠实学徒~
-
-### 正在研习的古老咒语
-
-![技能图标](https://skillicons.dev/icons?i=c,cpp,kotlin,python&theme=light)
-
-<sub>（偶尔会念错咒语导致程序爆炸💥）</sub>
-
-### 未来想学习的魔法
-
-![未来技能](https://skillicons.dev/icons?i=go,ts,js,react,vue,cs,java&theme=light)
 
 ## 魔女的小窝
 

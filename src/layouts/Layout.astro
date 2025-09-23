@@ -85,10 +85,15 @@ const bannerOffset =
 		<meta name="author" content={profileConfig.name}>
 
         <meta property="og:site_name" content={siteConfig.title} />
-        <meta property="og:url" content={Astro.url} />
+        <meta property="og:locale" content="zh_CN" />
+        <meta property="og:url" content={`${Astro.site}${Astro.url.pathname}`} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description || pageTitle} />
         <meta property="og:image" content="https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/23-20-28.webp" />
+        <meta property="og:image:alt" content={description || pageTitle} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/webp" />
         <meta property="og:type" content={setOGTypeArticle ? "article" : "website"} />
 
 		<meta name="twitter:card" content="summary_large_image">

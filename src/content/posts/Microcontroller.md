@@ -2,7 +2,7 @@
 title: 单片机的魔法入门课
 published: 2024-11-13
 description: "和单片机酱一起启程～从环境搭建到数码管显示，解锁动态扫描的小秘密♪"
-image: "../assets/images/1.webp"
+image: 'https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-20-46.webp'
 tags: ["STC51","IAP15F2K60S2"]
 category: 知识
 draft: false
@@ -46,7 +46,7 @@ lib_deps = C:\Users\Night\.platformio\packages\toolchain-sdcc\include
 
 
 ## 数码管位选和段选
-    
+
  ```c
 // 选择位
 void SelectBit(unsigned char pos) {
@@ -62,7 +62,7 @@ void SelectSegment(unsigned char value) {
   P0 = value;
 }
 
-```
+ ```
 
 ## 74HC573锁存器
 

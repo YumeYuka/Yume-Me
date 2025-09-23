@@ -63,6 +63,10 @@ if (!lang) {
 }
 const siteLang = lang.replace("_", "-");
 
+// 确保OG图像URL是绝对路径
+const ogImageUrl = new URL("https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-23-25.webp").href;
+const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
+
 const bannerOffsetByPosition = {
 	top: `${BANNER_HEIGHT_EXTEND}vh`,
 	center: `${BANNER_HEIGHT_EXTEND / 2}vh`,
@@ -84,22 +88,31 @@ const bannerOffset =
 		<meta name="description" content={description || pageTitle}>
 		<meta name="author" content={profileConfig.name}>
 
+        <!-- Open Graph 标签 -->
         <meta property="og:site_name" content={siteConfig.title} />
         <meta property="og:locale" content="zh_CN" />
-        <meta property="og:url" content={`${Astro.site}${Astro.url.pathname}`} />
+        <meta property="og:url" content={currentUrl} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description || pageTitle} />
-        <meta property="og:image" content="https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/23-20-28.webp" />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:secure_url" content={ogImageUrl} />
         <meta property="og:image:alt" content={description || pageTitle} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/webp" />
         <meta property="og:type" content={setOGTypeArticle ? "article" : "website"} />
 
+        <!-- Twitter 卡片标签 -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content={Astro.url}>
+		<meta name="twitter:site" content={siteConfig.title}>
+		<meta property="twitter:url" content={currentUrl}>
 		<meta name="twitter:title" content={pageTitle}>
 		<meta name="twitter:description" content={description || pageTitle}>
+        <meta name="twitter:image" content={ogImageUrl}>
+        <meta name="twitter:image:alt" content={description || pageTitle}>
+
+        <!-- Telegram 专用标签 -->
+        <meta property="telegram:channel" content="@yumeyuka">
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />

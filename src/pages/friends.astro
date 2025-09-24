@@ -1,0 +1,98 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainGridLayout title="友链">
+    <div class="card-base p-6 md:p-8">
+        <div class="flex items-center gap-2 mb-6">
+            <div class="h-8 w-8 rounded-lg bg-[var(--primary)] flex items-center justify-center text-white dark:text-black/70">
+                <Icon name="material-symbols:diversity-3" class="text-[1.5rem]">
+            </div>
+            <h1 class="text-2xl font-bold text-black dark:text-white">友链</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="https://fuwari.oh1.top/" target="_blank" class="friend-card">
+                <div class="flex items-center gap-2">
+                    <img src="https://avatars.githubusercontent.com/u/87564515?v=4"  loading="lazy" class="w-5 h-5 rounded">
+                    <div class="font-bold text-black dark:text-white">枫莹 </div>
+                </div>
+                <div class="text-sm text-black/50 dark:text-white/50">三無青年、ただ生きるだけ </div>
+            </a>
+            <a href="https://linso.top/" target="_blank" class="friend-card">
+                <div class="flex items-center gap-2">
+                    <img src="https://linso.top/128.png"  loading="lazy" class="w-5 h-5 rounded">
+                    <div class="font-bold text-black dark:text-white">Linso </div>
+                </div>
+                <div class="text-sm text-black/50 dark:text-white/50">这里没有技术可言，都是记录 </div>
+            </a>
+            <a href="https://github.com/NuoFang6" target="_blank" class="friend-card">
+                <div class="flex items-center gap-2">
+                    <img src="https://avatars.githubusercontent.com/u/137974286?v=4"  loading="lazy" class="w-5 h-5 rounded">
+                    <div class="font-bold text-black dark:text-white">诺芳 </div>
+                </div>
+                <div class="text-sm text-black/50 dark:text-white/50">看到龙图我会直接拉黑 </div>
+            </a>
+            <a href="https://shiror.ren/" target="_blank" class="friend-card">
+                <div class="flex items-center gap-2">
+                    <img src="https://avatars.githubusercontent.com/u/169267914?v=4"  loading="lazy" class="w-5 h-5 rounded">
+                    <div class="font-bold text-black dark:text-white">ShirorRen </div>
+                </div>
+                <div class="text-sm text-black/50 dark:text-white/50">可怖的心，骇人的行，如何是好;每日的辛，终无的幸，哪得逃掉? </div>
+            </a>
+            <a href="https://wsw.asia/" target="_blank" class="friend-card">
+                <div class="flex items-center gap-2">
+                    <img src="https://wsw.asia/upload/37dff58c-630a-464f-b1ea-9988285ff315.png"  loading="lazy" class="w-5 h-5 rounded">
+                    <div class="font-bold text-black dark:text-white">云深不知处 </div>
+                </div>
+                <div class="text-sm text-black/50 dark:text-white/50">万事屋|希望你一直都在 </div>
+            </a>
+
+        </div>
+
+        <!-- 申请友链 -->
+        <div class="sponsors-section mt-8">
+            <h2 class="text-xl font-bold text-black dark:text-white mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:group" class="text-[1.5rem] text-[var(--primary)]"/>
+                将您的网站加入本站友链
+            </h2>
+            <p class="text-sm text-black/60 dark:text-white/60">
+                请自行提交PR <a target="_blank" href="https://github.com/YumeYuka/Yume-Me/blob/main/src/pages/friends.astro" class="transition link text-[var(--primary)] font-medium underline">点击这里提交</a>
+            </p>
+            <br>
+        </div>
+
+</MainGridLayout>
+
+<style>
+    .friend-card {
+        @apply flex flex-col gap-1 p-4 rounded-lg bg-[var(--card-bg)] hover:bg-black/5 dark:hover:bg-white/5;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.15s;
+    }
+
+    .friend-card:active {
+        scale: .98;
+        background-color: var(--btn-regular-bg-active);
+    }
+
+    .friend-card:hover {
+        background-color: var(--btn-regular-bg-hover);
+    }
+
+    .friend-card:hover .font-bold {
+        color: var(--btn-content);
+    }
+
+    .friend-card:hover .text-sm {
+        @apply text-gray-700 dark:text-white;
+    }
+
+    .friend-card .font-bold,
+    .friend-card .text-sm {
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.15s;
+    }
+</style>

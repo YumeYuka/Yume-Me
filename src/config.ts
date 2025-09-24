@@ -44,8 +44,8 @@ export const navBarConfig: NavBarConfig = {
             external: false, // Show an external link icon and will open in a new tab
         },
         {
-            name: "GitHub",
-            url: "https://github.com/YumeYuka/Yume-Me", // Internal links should not include the base path, as it is
+            name: "统计",
+            url: "https://us.umami.is/share/QA4C7dikiZNVwva3", // Internal links should not include the base path, as it is
             // automatically added
             external: true, // Show an external link icon and will open in a new tab
         },

@@ -45,7 +45,8 @@ export const navBarConfig: NavBarConfig = {
         },
         {
             name: "统计",
-            url: "https://us.umami.is/share/QA4C7dikiZNVwva3", // Internal links should not include the base path, as it is
+            url: "https://eu.umami.is/share/QA4C7dikiZNVwva3", // Internal links should not include the base path, as
+            // it is
             // automatically added
             external: true, // Show an external link icon and will open in a new tab
         },
@@ -89,7 +90,7 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 
 export const umamiConfig: UmamiConfig = {
     enable: true,
-    baseUrl: "https://us.umami.is",
+    baseUrl: "https://eu.umami.is",
     shareId: "QA4C7dikiZNVwva3",
     timezone: "Asia/Shanghai",
 };

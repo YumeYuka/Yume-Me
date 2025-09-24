@@ -1,4 +1,4 @@
-import type {ExpressiveCodeConfig, LicenseConfig, NavBarConfig, ProfileConfig, SiteConfig,} from "./types/config";
+import type {ExpressiveCodeConfig, LicenseConfig, NavBarConfig, ProfileConfig, SiteConfig, UmamiConfig} from "./types/config";
 import {LinkPreset} from "./types/config";
 
 export const siteConfig: SiteConfig = {
@@ -85,4 +85,19 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
     // Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
     // Please select a dark theme, as this blog theme currently only supports dark background color
     theme: "github-dark",
+};
+
+export const umamiConfig: UmamiConfig = {
+    enable: true,
+    baseUrl: "https://us.umami.is",
+    shareId: "QA4C7dikiZNVwva3",
+    timezone: "Asia/Shanghai",
+};
+
+export const statsConfig = {
+    viewsText: "浏览",
+    visitsText: "访客",
+    loadingText: "统计加载中...",
+    unavailableText: "统计不可用。请检查是否屏蔽了Umami域名，如AdGuard和AdBlock等插件",
+    getStatsText: (pageViews: number, visits: number) => `${statsConfig.viewsText} ${pageViews} · ${statsConfig.visitsText} ${visits}`,
 };

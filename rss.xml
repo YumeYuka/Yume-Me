@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://www.yumeyuka.plus/</link><language>zh_CN</language><item><title>从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床</title><link>https://www.yumeyuka.plus/posts/edgeone-gh/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/edgeone-gh/</guid><description>带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨</description><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;使用项目&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://www.yumeyuka.plus/</link><language>zh_CN</language><item><title>从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床</title><link>https://www.yumeyuka.plus/posts/edgeone-gh/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/edgeone-gh/</guid><description>带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨</description><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;刚写完这个才发现有问题，如果 EO 是 NS 接入的话，可能会有问题， EO Pages 不能直接 CNAME 到 CDN  的节点，会直接 418 返回. EO 的 NS 接入坑还是有点多的，但是如果是域名在 CF 直接 cname 到 EO  还是会有问题，首先就是 CF 会默认给展平 APEX 域，这样 EO 那边就 永远不会到 CNAME 到，算是一个比较麻烦的问题，当然可以重定向解决这个问题，如果是 使用　CF Work 的话就需要域名解析商在 CF。&lt;/p&gt;
+&lt;h2&gt;使用项目&lt;/h2&gt;
 &lt;p&gt;实现开始之前，需要准备一个域名，备案最好，不备案建议使用cf 优选，不要用eo 了&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;cmliu/CF-Workers-Raw&quot;}&lt;/p&gt;
 &lt;p&gt;这个项目一开始是在 &lt;code&gt;Cloudflare Work&lt;/code&gt; 部署的后来 &lt;code&gt;Edgeone pages&lt;/code&gt; 出来之后，有人开了个 issue 就支持了&lt;/p&gt;
@@ -47,7 +49,7 @@
 A 记录直接解析到优选 IP ，如果选择申请免费的证书，cname 失效之后会导致 续签失败，建议直接使用 腾讯云申请的 SSL 证书，选择
 DNS验证然后不用删记录，直接等它自己续费就好了&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-16.webp&quot; alt=&quot;23-22-16.webp&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;然后优选 IP ，直接优选 香港 IP ，具体 IP段去看其他文档或者其他人写的 blog&lt;/p&gt;
+&lt;p&gt;然后优选 IP ，直接优选 香港 IP ，具体 IP段去看其他文档或者其他人写的 blog，如果你是CF 部署这里才用到下面的 IP ，否则如果是 将 EO CDN 的节点解析到 Pages 会直接返回 &lt;code&gt;418&lt;/code&gt; 报错&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;    43.174.150.199
     43.174.150.119
     43.174.151.16
@@ -71,8 +73,7 @@ DNS验证然后不用删记录，直接等它自己续费就好了&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-27.webp&quot; alt=&quot;23-22-27.webp&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;图片示例&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-30.webp&quot; alt=&quot;23-22-30.webp&quot; /&gt;&lt;/p&gt;
-</content:encoded></item><item><title>网易云降噪小魔法</title><link>https://www.yumeyuka.plus/posts/cloudpress/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/cloudpress/</guid><description>可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(&gt;_&lt;)</description><pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;网易云压制模块&lt;/h1&gt;
-&lt;p&gt;本来一个月前就该发出来的，最近突然想起来还没发出来，
+</content:encoded></item><item><title>网易云降噪小魔法</title><link>https://www.yumeyuka.plus/posts/cloudpress/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/cloudpress/</guid><description>可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(&gt;_&lt;)</description><pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;本来一个月前就该发出来的，最近突然想起来还没发出来，
 这一版相比之前没什么区别，还是建议更新到此版本，上版是 &lt;code&gt;CPP&lt;/code&gt; 写的，这一版用 &lt;code&gt;kotlin native&lt;/code&gt; 重写了,逻辑上没有变化，还是监听前台进程然后kill
 掉多余的不需要的服务&lt;/p&gt;
 &lt;p&gt;国内的毒瘤 APP 都太多了，点名网易云最为代表，听歌 APP 什么都有，本来性能就很差，还要在后台留一堆不需要的服务，太坏了&lt;/p&gt;
@@ -143,7 +144,7 @@ main()
         sleep(CHECK_INTERVAL)
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;题外话&lt;/h2&gt;
+&lt;p&gt;xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c&lt;/p&gt;
 &lt;p&gt;Kt Native 编译出来的目标 ELF 大小上和 C++ 差距不大,但是运行时内存占用可谓是天差地别 ,差了近 10 倍 的内存占用 ,当然 Kt
 Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 一段时间之后 GC 会到25M ,差不多回收了 1/2 但是和 C++
 编译出来还是差距很大&lt;/p&gt;
@@ -252,7 +253,7 @@ void DisplaySMG_Dynamic() {
 }
 
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（下）</title><link>https://www.yumeyuka.plus/posts/hosts-dns-part2/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts-dns-part2/</guid><description>从最初的HOSTS.TXT到如今庞大的DNS体系，这篇小日记记录了域名解析的发展历程，带你了解DNS如何替代hosts、层级化域名空间的形成，以及DNSSEC、根服务器和国际化域名的出现☆ </description><pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;域名解析系统发展史&lt;/h2&gt;
+</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（下）</title><link>https://www.yumeyuka.plus/posts/hosts-dns-part2/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts-dns-part2/</guid><description>从最初的HOSTS.TXT到如今庞大的DNS体系，这篇小日记记录了域名解析的发展历程</description><pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;域名解析系统发展史&lt;/h2&gt;
 &lt;h3&gt;早期互联网和主机文件（HOSTS.TXT）&lt;/h3&gt;
 &lt;p&gt;在DNS出现之前，互联网的域名解析依赖于一个中心化的文件：HOSTS.TXT。这个文件由斯坦福研究所（SRI）的Network Information Center (NIC) 维护，列出了每个域名对应的IP地址。每台计算机必须手动下载并更新这个文件才能进行域名解析。&lt;/p&gt;
 &lt;p&gt;随着互联网的发展和联网设备数量的增加，这种方法逐渐显得低效和不可扩展。尤其是随着互联网向全球化发展，HOSTS.TXT文件变得过大且更新频繁，无法满足需求。&lt;/p&gt;
@@ -274,7 +275,7 @@ void DisplaySMG_Dynamic() {
 &lt;p&gt;.com：最初为商业机构设计，现在广泛用于各种网站。&lt;/p&gt;
 &lt;p&gt;.org：用于非营利组织，但也被许多其他组织采用。&lt;/p&gt;
 &lt;p&gt;.net：最初为网络服务提供商设计，现在广泛使用。&lt;/p&gt;
-&lt;p&gt;.edu：用于美国的教育机构。&lt;/p&gt;
+&lt;p&gt;xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c&lt;/p&gt;
 &lt;p&gt;.gov：用于美国政府部门。&lt;/p&gt;
 &lt;p&gt;.mil：用于美国军事机构。
 国家顶级域名 (ccTLDs)： 每个国家或地区都有专门的顶级域名，以两个字母代码表示。常见的 ccTLD 包括：&lt;/p&gt;
@@ -305,7 +306,7 @@ mail.google.com：mail是三级域名，表示谷歌的邮件服务（Gmail）&l
 &lt;p&gt;根服务器IP地址的数量：在DNS系统中，客户端查询根域名时需要获取根域名服务器的IP地址列表。DNS解析器通过“根提示文件”（root hints file）来获取所有根服务器的IP地址信息。13个根服务器的IP地址列表恰好能适应这个512字节的限制。&lt;/p&gt;
 &lt;h3&gt;国际化域名 (IDN) 的引入&lt;/h3&gt;
 &lt;p&gt;随着全球互联网用户数量的增长，尤其是非英语国家用户的增加，使用仅支持ASCII字符的域名系统逐渐显得不足。为了支持更多的语言字符，国际化域名（IDN）在2000年代引入，允许使用非拉丁字符的域名（如中文、阿拉伯文、韩文等）&lt;/p&gt;
-</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（上）</title><link>https://www.yumeyuka.plus/posts/hosts_dns_part1/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts_dns_part1/</guid><description>从hosts酱到DNS君的故事～带你认识域名解析的基础原理，理解为什么修改hosts能直连，以及DNS污染和劫持这些小捣蛋鬼的秘密♪</description><pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;hosts 是什么？&lt;/h2&gt;
+</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（上）</title><link>https://www.yumeyuka.plus/posts/hosts_dns_part1/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts_dns_part1/</guid><description>从hosts酱到DNS君的故事～带你认识域名解析的基础原理，理解为什么修改hosts能直连</description><pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;hosts 是什么？&lt;/h2&gt;
 &lt;p&gt;在很早很早以前，域名解析系统还没有建立起来，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hosts 文件就可以找到对方的 IP 地址然后建立连接了&lt;/p&gt;
 &lt;p&gt;但是后来随着互联网的规模不断扩大，&lt;code&gt;hosts&lt;/code&gt;文件的维护也越来越困难，毕竟全球的网络主机都需要通过这个负责维护 hosts 更新站点来更新，hosts 所存放的解析记录数量级不断增加，单单只是检索就要花不少时间 &lt;a&gt;修改hosts文件理解DNS - （下）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;当我们打开这个&lt;code&gt;hosts&lt;/code&gt;文件之后可以发现里面有一下内容&lt;/p&gt;
@@ -335,7 +336,7 @@ ff02::2 ip6-allrouters
 &lt;li&gt;网站访问者通过浏览器向Local DNS（简称LDNS）发送解析请求。&lt;/li&gt;
 &lt;li&gt;LDNS将解析请求逐级转发（递归）至权威DNS。&lt;/li&gt;
 &lt;li&gt;权威DNS在收到解析请求后，将所有I地址以随机顺序返回LDNS。&lt;/li&gt;
-&lt;li&gt;LDNS将所有IP地址返回浏览器。&lt;/li&gt;
+&lt;li&gt;xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c&lt;/li&gt;
 &lt;li&gt;网站访问者的浏览器随机访问其中一个I地址，通常（不是绝对）选取第一个返回的IP地址。在没有做反向代理的情况下，如果返回的IP地址有多个，那么访问到这些IP地址的机会一般是均等的。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&quot;https://img.nightrainmilkyway.cn/img/v2-c3392cab45f8241c0369ec6457000df8_1440w.webp&quot; alt=&quot;v2-c3392cab45f8241c0369ec6457000df8_1440w.webp&quot; /&gt;&lt;/p&gt;

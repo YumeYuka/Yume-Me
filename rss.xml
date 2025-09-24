@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://yumeyuka.plus/</link><language>zh_CN</language><item><title>从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床</title><link>https://yumeyuka.plus/posts/edgeone-gh/</link><guid isPermaLink="true">https://yumeyuka.plus/posts/edgeone-gh/</guid><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;使用项目&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://yumeyuka.plus/</link><language>zh_CN</language><item><title>从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床</title><link>https://yumeyuka.plus/posts/edgeone-gh/</link><guid isPermaLink="true">https://yumeyuka.plus/posts/edgeone-gh/</guid><description>带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨</description><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;使用项目&lt;/h2&gt;
 &lt;p&gt;实现开始之前，需要准备一个域名，备案最好，不备案建议使用cf 优选，不要用eo 了&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;cmliu/CF-Workers-Raw&quot;}&lt;/p&gt;
 &lt;p&gt;这个项目一开始是在 &lt;code&gt;Cloudflare Work&lt;/code&gt; 部署的后来 &lt;code&gt;Edgeone pages&lt;/code&gt; 出来之后，有人开了个 issue 就支持了&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;https://github.com/cmliu/CF-Workers-Raw/issues/9&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-21-40.webp&quot; alt=&quot;image-20250923214032532&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-21-40.webp&quot; alt=&quot;23-21-40.webp&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;延迟数据&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-21-48.webp&quot; alt=&quot;image-20250923214838483&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-21-48.webp&quot; alt=&quot;23-21-48.webp&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;EO Pages 和 cdn 节点不一样，pages 最多给分配30个节点，由于直接这样用国内的cdn节点直接去代理 GitHub 文件肯定是不行的&lt;/p&gt;
 &lt;p&gt;平时绝大多数地方直接访问大概率也是被墙的 &lt;code&gt;GFW&lt;/code&gt; 发力了，想要做代理，那就需要去用到 EO 给分配的香港节点，&lt;/p&gt;
 &lt;blockquote&gt;
@@ -42,11 +42,11 @@
 &lt;p&gt;[!TIP]&lt;/p&gt;
 &lt;p&gt;如果 eo 是NS 接入的话就需要2个域名，一个在 cf work 一个用于 eo cdn 分发&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-22-10.webp&quot; alt=&quot;image-20250923221008843&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-10.webp&quot; alt=&quot;23-22-10.webp&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;在 SSL 证书申请选择： 建议使用 腾讯云 申请 SSL 的证书，至于为什么因为后面优选 IP 需要用到 ，优选 IP 原有的 cname 记录会失效，然后
 A 记录直接解析到优选 IP ，如果选择申请免费的证书，cname 失效之后会导致 续签失败，建议直接使用 腾讯云申请的 SSL 证书，选择
 DNS验证然后不用删记录，直接等它自己续费就好了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-22-16.webp&quot; alt=&quot;image-20250923221632239&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-16.webp&quot; alt=&quot;23-22-16.webp&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;然后优选 IP ，直接优选 香港 IP ，具体 IP段去看其他文档或者其他人写的 blog&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;    43.174.150.199
     43.174.150.119
@@ -68,9 +68,9 @@ DNS验证然后不用删记录，直接等它自己续费就好了&lt;/p&gt;
 &lt;p&gt;注意 自定义域名部分, 拼接部分需要注意，相对于使用 eo pages 然后去链接 &lt;code&gt;GitHub&lt;/code&gt; 储存库然后每次上传都要 build 好很多&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-22-27.webp&quot; alt=&quot;image-20250923222700864&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-27.webp&quot; alt=&quot;23-22-27.webp&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;图片示例&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-22-30.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-30.webp&quot; alt=&quot;23-22-30.webp&quot; /&gt;&lt;/p&gt;
 </content:encoded></item><item><title>网易云降噪小魔法</title><link>https://yumeyuka.plus/posts/cloudpress/</link><guid isPermaLink="true">https://yumeyuka.plus/posts/cloudpress/</guid><description>可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(&gt;_&lt;)</description><pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;网易云压制模块&lt;/h1&gt;
 &lt;p&gt;本来一个月前就该发出来的，最近突然想起来还没发出来，
 这一版相比之前没什么区别，还是建议更新到此版本，上版是 &lt;code&gt;CPP&lt;/code&gt; 写的，这一版用 &lt;code&gt;kotlin native&lt;/code&gt; 重写了,逻辑上没有变化，还是监听前台进程然后kill

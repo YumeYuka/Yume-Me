@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://yumeyuka.plus/</link><language>zh_CN</language><item><title>从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床</title><link>https://yumeyuka.plus/posts/edgeone-gh/</link><guid isPermaLink="true">https://yumeyuka.plus/posts/edgeone-gh/</guid><description>带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨</description><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;使用项目&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://www.yumeyuka.plus/</link><language>zh_CN</language><item><title>从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床</title><link>https://www.yumeyuka.plus/posts/edgeone-gh/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/edgeone-gh/</guid><description>带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨</description><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;使用项目&lt;/h2&gt;
 &lt;p&gt;实现开始之前，需要准备一个域名，备案最好，不备案建议使用cf 优选，不要用eo 了&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;cmliu/CF-Workers-Raw&quot;}&lt;/p&gt;
 &lt;p&gt;这个项目一开始是在 &lt;code&gt;Cloudflare Work&lt;/code&gt; 部署的后来 &lt;code&gt;Edgeone pages&lt;/code&gt; 出来之后，有人开了个 issue 就支持了&lt;/p&gt;
@@ -71,7 +71,7 @@ DNS验证然后不用删记录，直接等它自己续费就好了&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-27.webp&quot; alt=&quot;23-22-27.webp&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;图片示例&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-30.webp&quot; alt=&quot;23-22-30.webp&quot; /&gt;&lt;/p&gt;
-</content:encoded></item><item><title>网易云降噪小魔法</title><link>https://yumeyuka.plus/posts/cloudpress/</link><guid isPermaLink="true">https://yumeyuka.plus/posts/cloudpress/</guid><description>可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(&gt;_&lt;)</description><pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;网易云压制模块&lt;/h1&gt;
+</content:encoded></item><item><title>网易云降噪小魔法</title><link>https://www.yumeyuka.plus/posts/cloudpress/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/cloudpress/</guid><description>可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(&gt;_&lt;)</description><pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;网易云压制模块&lt;/h1&gt;
 &lt;p&gt;本来一个月前就该发出来的，最近突然想起来还没发出来，
 这一版相比之前没什么区别，还是建议更新到此版本，上版是 &lt;code&gt;CPP&lt;/code&gt; 写的，这一版用 &lt;code&gt;kotlin native&lt;/code&gt; 重写了,逻辑上没有变化，还是监听前台进程然后kill
 掉多余的不需要的服务&lt;/p&gt;
@@ -152,7 +152,7 @@ Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 
 &lt;p&gt;Kt Native MacOS 和 IOS 为大致为第一梯队 , Linux 差不多为第二梯队, Android 和Windows差不多就是第三梯队了&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-21-09.webp&quot; alt=&quot;image-20250923210928868&quot; /&gt;&lt;/p&gt;
-</content:encoded></item><item><title>单片机的魔法入门课</title><link>https://yumeyuka.plus/posts/microcontroller/</link><guid isPermaLink="true">https://yumeyuka.plus/posts/microcontroller/</guid><description>和单片机酱一起启程～从环境搭建到数码管显示，解锁动态扫描的小秘密♪</description><pubDate>Wed, 13 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;数码管显示的一些使用的操作&lt;/h3&gt;
+</content:encoded></item><item><title>单片机的魔法入门课</title><link>https://www.yumeyuka.plus/posts/microcontroller/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/microcontroller/</guid><description>和单片机酱一起启程～从环境搭建到数码管显示，解锁动态扫描的小秘密♪</description><pubDate>Wed, 13 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;数码管显示的一些使用的操作&lt;/h3&gt;
 &lt;p&gt;晶体数码管按公共端极性可分为共阴极和共阳极两种。由于每次只能点亮一位，要实现多位同时显示，就必须配合锁存器以及段选、位选电路，采用动态扫描的方式。动态扫描利用人眼的视觉滞留效应，通过高速轮询各位并依次点亮，让多位数码管看起来像是同时显示。但如果刷新速度过快，切换瞬间会产生残影；速度过慢，又会出现闪烁。因此，在位选与段选切换处需加入适当的消抖延时，既能消除重影，又保证显示稳定。无论共阴极还是共阳极，原理相同，都是通过合理控制每个位的点亮时间和刷新频率，实现清晰、流畅的动态显示。&lt;/p&gt;
 &lt;h3&gt;环境配置&lt;/h3&gt;
 &lt;ol&gt;
@@ -252,7 +252,7 @@ void DisplaySMG_Dynamic() {
 }
 
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（下）</title><link>https://yumeyuka.plus/posts/hosts-dns-part2/</link><guid isPermaLink="true">https://yumeyuka.plus/posts/hosts-dns-part2/</guid><description>从最初的HOSTS.TXT到如今庞大的DNS体系，这篇小日记记录了域名解析的发展历程，带你了解DNS如何替代hosts、层级化域名空间的形成，以及DNSSEC、根服务器和国际化域名的出现☆ </description><pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;域名解析系统发展史&lt;/h2&gt;
+</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（下）</title><link>https://www.yumeyuka.plus/posts/hosts-dns-part2/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts-dns-part2/</guid><description>从最初的HOSTS.TXT到如今庞大的DNS体系，这篇小日记记录了域名解析的发展历程，带你了解DNS如何替代hosts、层级化域名空间的形成，以及DNSSEC、根服务器和国际化域名的出现☆ </description><pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;域名解析系统发展史&lt;/h2&gt;
 &lt;h3&gt;早期互联网和主机文件（HOSTS.TXT）&lt;/h3&gt;
 &lt;p&gt;在DNS出现之前，互联网的域名解析依赖于一个中心化的文件：HOSTS.TXT。这个文件由斯坦福研究所（SRI）的Network Information Center (NIC) 维护，列出了每个域名对应的IP地址。每台计算机必须手动下载并更新这个文件才能进行域名解析。&lt;/p&gt;
 &lt;p&gt;随着互联网的发展和联网设备数量的增加，这种方法逐渐显得低效和不可扩展。尤其是随着互联网向全球化发展，HOSTS.TXT文件变得过大且更新频繁，无法满足需求。&lt;/p&gt;
@@ -305,7 +305,7 @@ mail.google.com：mail是三级域名，表示谷歌的邮件服务（Gmail）&l
 &lt;p&gt;根服务器IP地址的数量：在DNS系统中，客户端查询根域名时需要获取根域名服务器的IP地址列表。DNS解析器通过“根提示文件”（root hints file）来获取所有根服务器的IP地址信息。13个根服务器的IP地址列表恰好能适应这个512字节的限制。&lt;/p&gt;
 &lt;h3&gt;国际化域名 (IDN) 的引入&lt;/h3&gt;
 &lt;p&gt;随着全球互联网用户数量的增长，尤其是非英语国家用户的增加，使用仅支持ASCII字符的域名系统逐渐显得不足。为了支持更多的语言字符，国际化域名（IDN）在2000年代引入，允许使用非拉丁字符的域名（如中文、阿拉伯文、韩文等）&lt;/p&gt;
-</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（上）</title><link>https://yumeyuka.plus/posts/hosts_dns_part1/</link><guid isPermaLink="true">https://yumeyuka.plus/posts/hosts_dns_part1/</guid><description>从hosts酱到DNS君的故事～带你认识域名解析的基础原理，理解为什么修改hosts能直连，以及DNS污染和劫持这些小捣蛋鬼的秘密♪</description><pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;hosts 是什么？&lt;/h2&gt;
+</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（上）</title><link>https://www.yumeyuka.plus/posts/hosts_dns_part1/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts_dns_part1/</guid><description>从hosts酱到DNS君的故事～带你认识域名解析的基础原理，理解为什么修改hosts能直连，以及DNS污染和劫持这些小捣蛋鬼的秘密♪</description><pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;hosts 是什么？&lt;/h2&gt;
 &lt;p&gt;在很早很早以前，域名解析系统还没有建立起来，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hosts 文件就可以找到对方的 IP 地址然后建立连接了&lt;/p&gt;
 &lt;p&gt;但是后来随着互联网的规模不断扩大，&lt;code&gt;hosts&lt;/code&gt;文件的维护也越来越困难，毕竟全球的网络主机都需要通过这个负责维护 hosts 更新站点来更新，hosts 所存放的解析记录数量级不断增加，单单只是检索就要花不少时间 &lt;a&gt;修改hosts文件理解DNS - （下）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;当我们打开这个&lt;code&gt;hosts&lt;/code&gt;文件之后可以发现里面有一下内容&lt;/p&gt;

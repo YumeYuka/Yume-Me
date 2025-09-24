@@ -151,7 +151,7 @@ Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 
 &lt;p&gt;[!TIP]&lt;/p&gt;
 &lt;p&gt;Kt Native MacOS 和 IOS 为大致为第一梯队 , Linux 差不多为第二梯队, Android 和Windows差不多就是第三梯队了&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-21-09.webp&quot; alt=&quot;image-20250923210928868&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-21-09.webp&quot; alt=&quot;23-21-09.webp&quot; /&gt;&lt;/p&gt;
 </content:encoded></item><item><title>单片机的魔法入门课</title><link>https://www.yumeyuka.plus/posts/microcontroller/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/microcontroller/</guid><description>和单片机酱一起启程～从环境搭建到数码管显示，解锁动态扫描的小秘密♪</description><pubDate>Wed, 13 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;数码管显示的一些使用的操作&lt;/h3&gt;
 &lt;p&gt;晶体数码管按公共端极性可分为共阴极和共阳极两种。由于每次只能点亮一位，要实现多位同时显示，就必须配合锁存器以及段选、位选电路，采用动态扫描的方式。动态扫描利用人眼的视觉滞留效应，通过高速轮询各位并依次点亮，让多位数码管看起来像是同时显示。但如果刷新速度过快，切换瞬间会产生残影；速度过慢，又会出现闪烁。因此，在位选与段选切换处需加入适当的消抖延时，既能消除重影，又保证显示稳定。无论共阴极还是共阳极，原理相同，都是通过合理控制每个位的点亮时间和刷新频率，实现清晰、流畅的动态显示。&lt;/p&gt;
 &lt;h3&gt;环境配置&lt;/h3&gt;

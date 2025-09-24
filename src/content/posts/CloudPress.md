@@ -81,4 +81,4 @@ Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 
 >
 > Kt Native MacOS 和 IOS 为大致为第一梯队 , Linux 差不多为第二梯队, Android 和Windows差不多就是第三梯队了
 
-![image-20250923210928868](https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/2025/23-21-09.webp)
+![23-21-09.webp](https://s3.yumeyuka.plus/2025/23-21-09.webp)

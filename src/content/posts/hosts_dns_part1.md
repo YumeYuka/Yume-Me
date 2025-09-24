@@ -1,7 +1,7 @@
 ---
 title: DNS的秘密日记～从hosts开始的物语（上）
 published: 2024-09-23
-description: "从hosts酱到DNS君的故事～带你认识域名解析的基础原理，理解为什么修改hosts能直连，以及DNS污染和劫持这些小捣蛋鬼的秘密♪"
+description: "从hosts酱到DNS君的故事～带你认识域名解析的基础原理，理解为什么修改hosts能直连"
 image: "https://s3.yumeyuka.plus/2025/1758683288658.webp"
 tags: ["DNS","hosts"]
 category: 知识
@@ -52,7 +52,7 @@ DNS（Domain Name System，域名系统），将人类可读的域名（例如 w
 1. 网站访问者通过浏览器向Local DNS（简称LDNS）发送解析请求。
  2. LDNS将解析请求逐级转发（递归）至权威DNS。
 3. 权威DNS在收到解析请求后，将所有I地址以随机顺序返回LDNS。
-4. LDNS将所有IP地址返回浏览器。
+4. xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c
 5. 网站访问者的浏览器随机访问其中一个I地址，通常（不是绝对）选取第一个返回的IP地址。在没有做反向代理的情况下，如果返回的IP地址有多个，那么访问到这些IP地址的机会一般是均等的。
 
 ![v2-c3392cab45f8241c0369ec6457000df8_1440w.webp](https://img.nightrainmilkyway.cn/img/v2-c3392cab45f8241c0369ec6457000df8_1440w.webp)

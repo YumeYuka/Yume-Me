@@ -8,7 +8,7 @@ category: 知识
 draft: false
 ---
 
-# 网易云压制模块
+
 
 本来一个月前就该发出来的，最近突然想起来还没发出来，
 这一版相比之前没什么区别，还是建议更新到此版本，上版是 `CPP` 写的，这一版用 `kotlin native` 重写了,逻辑上没有变化，还是监听前台进程然后kill
@@ -71,11 +71,13 @@ main()
 
 ```
 
-## 题外话
+xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c
 
 Kt Native 编译出来的目标 ELF 大小上和 C++ 差距不大,但是运行时内存占用可谓是天差地别 ,差了近 10 倍 的内存占用 ,当然 Kt
 Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 一段时间之后 GC 会到25M ,差不多回收了 1/2 但是和 C++
 编译出来还是差距很大
+
+
 
 > [!TIP]
 >

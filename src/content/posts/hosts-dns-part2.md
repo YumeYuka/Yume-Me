@@ -1,8 +1,7 @@
 ---
 title: DNS的秘密日记～从hosts开始的物语（下）
 published: 2024-09-26
-description: "从最初的HOSTS.TXT到如今庞大的DNS体系，这篇小日记记录了域名解析的发展历程，带你了解DNS如何替代hosts、层级化域名空间的形成，以及DNSSEC、根服务器和国际化域名的出现☆
-"
+description: "从最初的HOSTS.TXT到如今庞大的DNS体系，这篇小日记记录了域名解析的发展历程"
 image: "https://s3.yumeyuka.plus/2025/1758683286326.webp"
 tags: ["DNS", "hosts"]
 category: 知识
@@ -46,7 +45,7 @@ draft: false
 
 .net：最初为网络服务提供商设计，现在广泛使用。
 
-.edu：用于美国的教育机构。
+xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c
 
 .gov：用于美国政府部门。
 

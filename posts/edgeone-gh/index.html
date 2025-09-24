@@ -118,42 +118,42 @@ if (document.readyState === 'loading') {
                 <a href="/archive/?tag=edgeone" aria-label="View all posts with the edgeone tag" class="link-lg transition text-50 text-sm font-medium
                                 hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> edgeone </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
                 <a href="/archive/?tag=github" aria-label="View all posts with the github tag" class="link-lg transition text-50 text-sm font-medium
-                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> github </a>  </div> </div> </div>  </div> <!-- always show cover as long as it has one --> <div id="post-cover" class="mb-8 rounded-xl banner-container onload-animation overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="https://s3.yumeyuka.plus/2025/23-20-43.webp" alt class="w-full h-full object-cover" style="object-position: center"> </div> <div data-pagefind-body class="prose dark:prose-invert prose-base !max-w-none custom-md mb-6 markdown-content onload-animation"> <!--<div class="prose dark:prose-invert max-w-none custom-md">--> <!--<div class="max-w-none custom-md">-->  <section><h2 id="使用项目">使用项目<a class="anchor" href="#使用项目"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><p>实现开始之前，需要准备一个域名，备案最好，不备案建议使用cf 优选，不要用eo 了</p><a id="GCtwdeeo-card" class="card-github fetch-waiting no-styling" href="https://github.com/cmliu/CF-Workers-Raw" target="_blank" repo="cmliu/CF-Workers-Raw"><div class="gc-titlebar"><div class="gc-titlebar-left"><div class="gc-owner"><div id="GCtwdeeo-avatar" class="gc-avatar"></div><div class="gc-user">cmliu</div></div><div class="gc-divider">/</div><div class="gc-repo">CF-Workers-Raw</div></div><div class="github-logo"></div></div><div id="GCtwdeeo-description" class="gc-description">Waiting for api.github.com...</div><div class="gc-infobar"><div id="GCtwdeeo-stars" class="gc-stars">00K</div><div id="GCtwdeeo-forks" class="gc-forks">0K</div><div id="GCtwdeeo-license" class="gc-license">0K</div><span id="GCtwdeeo-language" class="gc-language">Waiting...</span></div><script id="GCtwdeeo-script" type="text/javascript" defer>
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> github </a>  </div> </div> </div>  </div> <!-- always show cover as long as it has one --> <div id="post-cover" class="mb-8 rounded-xl banner-container onload-animation overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="https://s3.yumeyuka.plus/2025/23-20-43.webp" alt class="w-full h-full object-cover" style="object-position: center"> </div> <div data-pagefind-body class="prose dark:prose-invert prose-base !max-w-none custom-md mb-6 markdown-content onload-animation"> <!--<div class="prose dark:prose-invert max-w-none custom-md">--> <!--<div class="max-w-none custom-md">-->  <section><h2 id="使用项目">使用项目<a class="anchor" href="#使用项目"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><p>实现开始之前，需要准备一个域名，备案最好，不备案建议使用cf 优选，不要用eo 了</p><a id="GCmn0vzv-card" class="card-github fetch-waiting no-styling" href="https://github.com/cmliu/CF-Workers-Raw" target="_blank" repo="cmliu/CF-Workers-Raw"><div class="gc-titlebar"><div class="gc-titlebar-left"><div class="gc-owner"><div id="GCmn0vzv-avatar" class="gc-avatar"></div><div class="gc-user">cmliu</div></div><div class="gc-divider">/</div><div class="gc-repo">CF-Workers-Raw</div></div><div class="github-logo"></div></div><div id="GCmn0vzv-description" class="gc-description">Waiting for api.github.com...</div><div class="gc-infobar"><div id="GCmn0vzv-stars" class="gc-stars">00K</div><div id="GCmn0vzv-forks" class="gc-forks">0K</div><div id="GCmn0vzv-license" class="gc-license">0K</div><span id="GCmn0vzv-language" class="gc-language">Waiting...</span></div><script id="GCmn0vzv-script" type="text/javascript" defer>
       fetch('https://api.github.com/repos/cmliu/CF-Workers-Raw', { referrerPolicy: "no-referrer" }).then(response => response.json()).then(data => {
-        document.getElementById('GCtwdeeo-description').innerText = data.description?.replace(/:[a-zA-Z0-9_]+:/g, '') || "Description not set";
-        document.getElementById('GCtwdeeo-language').innerText = data.language;
-        document.getElementById('GCtwdeeo-forks').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll(" ", '');
-        document.getElementById('GCtwdeeo-stars').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll(" ", '');
-        const avatarEl = document.getElementById('GCtwdeeo-avatar');
+        document.getElementById('GCmn0vzv-description').innerText = data.description?.replace(/:[a-zA-Z0-9_]+:/g, '') || "Description not set";
+        document.getElementById('GCmn0vzv-language').innerText = data.language;
+        document.getElementById('GCmn0vzv-forks').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll(" ", '');
+        document.getElementById('GCmn0vzv-stars').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll(" ", '');
+        const avatarEl = document.getElementById('GCmn0vzv-avatar');
         avatarEl.style.backgroundImage = 'url(' + data.owner.avatar_url + ')';
         avatarEl.style.backgroundColor = 'transparent';
-        document.getElementById('GCtwdeeo-license').innerText = data.license?.spdx_id || "no-license";
-        document.getElementById('GCtwdeeo-card').classList.remove("fetch-waiting");
-        console.log("[GITHUB-CARD] Loaded card for cmliu/CF-Workers-Raw | GCtwdeeo.")
+        document.getElementById('GCmn0vzv-license').innerText = data.license?.spdx_id || "no-license";
+        document.getElementById('GCmn0vzv-card').classList.remove("fetch-waiting");
+        console.log("[GITHUB-CARD] Loaded card for cmliu/CF-Workers-Raw | GCmn0vzv.")
       }).catch(err => {
-        const c = document.getElementById('GCtwdeeo-card');
+        const c = document.getElementById('GCmn0vzv-card');
         c?.classList.add("fetch-error");
-        console.warn("[GITHUB-CARD] (Error) Loading card for cmliu/CF-Workers-Raw | GCtwdeeo.")
+        console.warn("[GITHUB-CARD] (Error) Loading card for cmliu/CF-Workers-Raw | GCmn0vzv.")
       })
     </script></a><p>这个项目一开始是在 <code>Cloudflare Work</code> 部署的后来 <code>Edgeone pages</code> 出来之后，有人开了个 issue 就支持了</p><ul>
 <li><a href="https://github.com/cmliu/CF-Workers-Raw/issues/9">https://github.com/cmliu/CF-Workers-Raw/issues/9</a></li>
 </ul><p><img src="https://s3.yumeyuka.plus/2025/23-21-40.webp" alt="23-21-40.webp"></p></section>
-<section><h2 id="延迟数据">延迟数据<a class="anchor" href="#延迟数据"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><p><img src="https://s3.yumeyuka.plus/2025/23-21-48.webp" alt="23-21-48.webp"></p><p>EO Pages 和 cdn 节点不一样，pages 最多给分配30个节点，由于直接这样用国内的cdn节点直接去代理 GitHub 文件肯定是不行的</p><p>平时绝大多数地方直接访问大概率也是被墙的 <code>GFW</code> 发力了，想要做代理，那就需要去用到 EO 给分配的香港节点，</p><blockquote class="admonition bdm-tip"><span class="bdm-title">TIP</span><p>EO 刚出来的时候确实是白月光，即使没备案直接 优选 香港节点，延迟优化很错，差不多相当于是全绿了</p><p>但是后面 8 月 初就开始砍了，现在优选 香港节点的话大概率会直接得到 <code>418</code> 状态码，这样开来还不让直接优选 cf</p></blockquote><p>首先把这项目自己 Fork 一份 ，用 CF 代理也行 用 EO pages 也行,没备案建议使用 cf work 优选,</p><a id="GCu0arai-card" class="card-github fetch-waiting no-styling" href="https://github.com/cmliu/CF-Workers-Raw" target="_blank" repo="cmliu/CF-Workers-Raw"><div class="gc-titlebar"><div class="gc-titlebar-left"><div class="gc-owner"><div id="GCu0arai-avatar" class="gc-avatar"></div><div class="gc-user">cmliu</div></div><div class="gc-divider">/</div><div class="gc-repo">CF-Workers-Raw</div></div><div class="github-logo"></div></div><div id="GCu0arai-description" class="gc-description">Waiting for api.github.com...</div><div class="gc-infobar"><div id="GCu0arai-stars" class="gc-stars">00K</div><div id="GCu0arai-forks" class="gc-forks">0K</div><div id="GCu0arai-license" class="gc-license">0K</div><span id="GCu0arai-language" class="gc-language">Waiting...</span></div><script id="GCu0arai-script" type="text/javascript" defer>
+<section><h2 id="延迟数据">延迟数据<a class="anchor" href="#延迟数据"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><p><img src="https://s3.yumeyuka.plus/2025/23-21-48.webp" alt="23-21-48.webp"></p><p>EO Pages 和 cdn 节点不一样，pages 最多给分配30个节点，由于直接这样用国内的cdn节点直接去代理 GitHub 文件肯定是不行的</p><p>平时绝大多数地方直接访问大概率也是被墙的 <code>GFW</code> 发力了，想要做代理，那就需要去用到 EO 给分配的香港节点，</p><blockquote class="admonition bdm-tip"><span class="bdm-title">TIP</span><p>EO 刚出来的时候确实是白月光，即使没备案直接 优选 香港节点，延迟优化很错，差不多相当于是全绿了</p><p>但是后面 8 月 初就开始砍了，现在优选 香港节点的话大概率会直接得到 <code>418</code> 状态码，这样开来还不让直接优选 cf</p></blockquote><p>首先把这项目自己 Fork 一份 ，用 CF 代理也行 用 EO pages 也行,没备案建议使用 cf work 优选,</p><a id="GCw0oeuo-card" class="card-github fetch-waiting no-styling" href="https://github.com/cmliu/CF-Workers-Raw" target="_blank" repo="cmliu/CF-Workers-Raw"><div class="gc-titlebar"><div class="gc-titlebar-left"><div class="gc-owner"><div id="GCw0oeuo-avatar" class="gc-avatar"></div><div class="gc-user">cmliu</div></div><div class="gc-divider">/</div><div class="gc-repo">CF-Workers-Raw</div></div><div class="github-logo"></div></div><div id="GCw0oeuo-description" class="gc-description">Waiting for api.github.com...</div><div class="gc-infobar"><div id="GCw0oeuo-stars" class="gc-stars">00K</div><div id="GCw0oeuo-forks" class="gc-forks">0K</div><div id="GCw0oeuo-license" class="gc-license">0K</div><span id="GCw0oeuo-language" class="gc-language">Waiting...</span></div><script id="GCw0oeuo-script" type="text/javascript" defer>
       fetch('https://api.github.com/repos/cmliu/CF-Workers-Raw', { referrerPolicy: "no-referrer" }).then(response => response.json()).then(data => {
-        document.getElementById('GCu0arai-description').innerText = data.description?.replace(/:[a-zA-Z0-9_]+:/g, '') || "Description not set";
-        document.getElementById('GCu0arai-language').innerText = data.language;
-        document.getElementById('GCu0arai-forks').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll(" ", '');
-        document.getElementById('GCu0arai-stars').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll(" ", '');
-        const avatarEl = document.getElementById('GCu0arai-avatar');
+        document.getElementById('GCw0oeuo-description').innerText = data.description?.replace(/:[a-zA-Z0-9_]+:/g, '') || "Description not set";
+        document.getElementById('GCw0oeuo-language').innerText = data.language;
+        document.getElementById('GCw0oeuo-forks').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll(" ", '');
+        document.getElementById('GCw0oeuo-stars').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll(" ", '');
+        const avatarEl = document.getElementById('GCw0oeuo-avatar');
         avatarEl.style.backgroundImage = 'url(' + data.owner.avatar_url + ')';
         avatarEl.style.backgroundColor = 'transparent';
-        document.getElementById('GCu0arai-license').innerText = data.license?.spdx_id || "no-license";
-        document.getElementById('GCu0arai-card').classList.remove("fetch-waiting");
-        console.log("[GITHUB-CARD] Loaded card for cmliu/CF-Workers-Raw | GCu0arai.")
+        document.getElementById('GCw0oeuo-license').innerText = data.license?.spdx_id || "no-license";
+        document.getElementById('GCw0oeuo-card').classList.remove("fetch-waiting");
+        console.log("[GITHUB-CARD] Loaded card for cmliu/CF-Workers-Raw | GCw0oeuo.")
       }).catch(err => {
-        const c = document.getElementById('GCu0arai-card');
+        const c = document.getElementById('GCw0oeuo-card');
         c?.classList.add("fetch-error");
-        console.warn("[GITHUB-CARD] (Error) Loading card for cmliu/CF-Workers-Raw | GCu0arai.")
+        console.warn("[GITHUB-CARD] (Error) Loading card for cmliu/CF-Workers-Raw | GCw0oeuo.")
       })
     </script></a><p>然后再 cf work 或者 eo pages 直接直接链接账户 导入 <code>Edgeone</code> 分支, cf 是默认的 <code>mian</code> 分支 ,部署之后需要绑定
 自定义的域名访问，，然后有以下3种方案</p>

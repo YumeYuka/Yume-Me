@@ -2,7 +2,7 @@
 title: DNS的秘密日记～从hosts开始的物语（上）
 published: 2024-09-23
 description: "从hosts酱到DNS君的故事～带你认识域名解析的基础原理，理解为什么修改hosts能直连"
-image: "https://s3.yumeyuka.plus/2025/1758683288658.webp"
+image: "https://s3.yumeyuka.plus/2025/23-21-08.webp"
 tags: ["DNS","hosts"]
 category: 知识
 draft: false

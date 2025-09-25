@@ -14,6 +14,26 @@ draft: false
 
 刚写完这个才发现有问题，如果 EO 是 NS 接入的话，可能会有问题， EO Pages 不能直接 CNAME 到 CDN  的节点，会直接 418 返回. EO 的 NS 接入坑还是有点多的，但是如果是域名在 CF 直接 cname 到 EO  还是会有问题，首先就是 CF 会默认给展平 APEX 域，这样 EO 那边就 永远不会到 CNAME 到，算是一个比较麻烦的问题，当然可以重定向解决这个问题，如果是 使用　CF Work 的话就需要域名解析商在 CF。
 
+
+ > [!WARNING]  
+ >
+ > 此文章现在已经失效了，如果非要做图床可以考虑使用EO Pages 然后 直接 A 记录到 IP，国内 CDN 无法加速境外的站点，官方是这样说的 https://cloud.tencent.com/developer/tutorial/practice/1017  
+ >
+ > 
+ >
+ > 也就是说这些已经不适用了，如果是直接优选香港节点的话 会直接得到解析失败，在反复折腾了 3填之后还是放弃了，目前已经不适用了，硬要优选还不如 cf   
+ >
+ > 
+ >
+ > ![image-20250926001633263](https://s3.yumeyuka.plus/2025/09/814336ab2ef7f351a79f95de8d24cf69.webp)
+ >
+ > 
+ >
+ > ![image-20250926001242062](https://s3.yumeyuka.plus/2025/09/5ebcb53f599a261df4152b074f1aae29.webp)
+ >
+
+
+
 ## 使用项目
 
 实现开始之前，需要准备一个域名，备案最好，不备案建议使用cf 优选，不要用eo 了

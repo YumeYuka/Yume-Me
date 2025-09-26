@@ -1,9 +1,9 @@
 {
   "redirects": [
     {
-      "source": "$host",
-      "destination": "www.$host",
-      "statusCode": 301
+      "source": "yumeyuka.plus",
+      "destination": "www.yumeyuka.plus",
+      "statusCode": 302
     }
   ]
 }

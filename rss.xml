@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://www.yumeyuka.plus/</link><language>zh_CN</language><item><title>从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床</title><link>https://www.yumeyuka.plus/posts/edgeone-gh/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/edgeone-gh/</guid><description>带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨</description><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://www.yumeyuka.plus/</link><language>zh_CN</language><item><title>Pages × CDN：跳转的另一边</title><link>https://www.yumeyuka.plus/posts/apex-to-www/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/apex-to-www/</guid><description>Pages酱遇到CDN君就会报418，还不听话的Apex只好靠重定向魔法解决啦～</description><pubDate>Fri, 26 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;前情提要&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!TIP]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;https://www.yumeyuka.plus/posts/edgeone-gh/&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;结论：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如果 Pages 直接解析到 CDN 节点，会返回一个 &lt;code&gt;418&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果要 Pages 再套一层 CDN 节点则不能直接 CNAME 到分配的解析记录，需要绑定一个中转的子域名， 然后由需要加速的域名的源站填写中转的域名，否则同上返回 &lt;code&gt;418&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Apex 不适用上面方法，即不能通过子域中转，且与自定义 &lt;code&gt;NS&lt;/code&gt; &lt;code&gt;DNSSEC&lt;/code&gt;  冲突，同上返回 &lt;code&gt;418&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Pages 不能进行优选，且无意义，无论国际站还是国内站，如果部署区域为非大陆，非大陆网络可正常访问，大陆网络返回 &lt;code&gt;401&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;非大陆站点，即境外站点，例如 &lt;code&gt;GitHub Pages Vercel Netlify Cloudflare Pgaes / Work&lt;/code&gt; 等，使用 CDN 加速无意义&lt;/li&gt;
+&lt;li&gt;重复第三条，当 Apex 和 www 子域及其它变体绑定到同一  Pages 时，无法通过 &lt;code&gt;edgeone.json&lt;/code&gt; 进行重定向，此处需要满足同时使用第二条，否则无限重定向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;那么如何解决 Apex 重定向到 www 子域呢&lt;/h2&gt;
+&lt;p&gt;方法有很多，这里我通过使用分2个 Pages 项目部署，将 Apex 绑定到新的 Pages 项目，新建 &lt;code&gt;index.html&lt;/code&gt;  &lt;code&gt;edgeone.json&lt;/code&gt; 进行重定向，需要在 index.html中填入和需要重定向内容相同的 &lt;code&gt;head&lt;/code&gt; 内容，例如 og 这种&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&quot;zh-CN&quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&amp;gt;
+    &amp;lt;title&amp;gt;梦璃酱 - YumeYuka Blog of Dreams&amp;lt;/title&amp;gt;
+    
+    &amp;lt;!-- 重定向 --&amp;gt;
+    &amp;lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=https://www.yumeyuka.plus/&quot;&amp;gt;
+    
+    &amp;lt;!-- 规范链接 --&amp;gt;
+    &amp;lt;link rel=&quot;canonical&quot; href=&quot;https://www.yumeyuka.plus/&quot;&amp;gt;
+    
+    &amp;lt;!-- 基本SEO标签 --&amp;gt;
+    &amp;lt;meta name=&quot;description&quot; content=&quot;梦璃酱 - YumeYuka Blog of Dreams&quot;&amp;gt;
+    &amp;lt;meta name=&quot;author&quot; content=&quot;梦璃酱 - YumeYuka&quot;&amp;gt;
+    &amp;lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&amp;gt;
+    
+    &amp;lt;!-- Open Graph 标签 --&amp;gt;
+    &amp;lt;meta property=&quot;og:site_name&quot; content=&quot;梦璃酱&quot;&amp;gt;
+    &amp;lt;meta property=&quot;og:locale&quot; content=&quot;zh_CN&quot;&amp;gt;
+    &amp;lt;meta property=&quot;og:url&quot; content=&quot;https://www.yumeyuka.plus/&quot;&amp;gt;
+    &amp;lt;meta property=&quot;og:title&quot; content=&quot;一つの心臓の両面に傷を負う&quot;&amp;gt;
+    &amp;lt;meta property=&quot;og:image&quot; content=&quot;https://s3.yumeyuka.plus/2025/23-22-30.webp&quot;&amp;gt;
+    &amp;lt;meta property=&quot;og:image:secure_url&quot; content=&quot;https://s3.yumeyuka.plus/2025/23-22-30.webp&quot;&amp;gt;
+    
+    &amp;lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&amp;gt;
+    &amp;lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&amp;gt;
+    &amp;lt;meta property=&quot;og:image:type&quot; content=&quot;image/webp&quot;&amp;gt;
+    &amp;lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&amp;gt;
+    
+    &amp;lt;!-- Twitter 卡片标签 --&amp;gt;
+    &amp;lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&amp;gt;
+    &amp;lt;meta name=&quot;twitter:site&quot; content=&quot;梦璃酱&quot;&amp;gt;
+    &amp;lt;meta property=&quot;twitter:url&quot; content=&quot;https://www.yumeyuka.plus/&quot;&amp;gt;
+    &amp;lt;meta name=&quot;twitter:title&quot; content=&quot;一つの心臓の両面に傷を負う&quot;&amp;gt;
+    &amp;lt;meta name=&quot;twitter:image&quot; content=&quot;https://s3.yumeyuka.plus/2025/23-22-30.webp&quot;&amp;gt;
+    
+    &amp;lt;!-- Telegram 专用标签 --&amp;gt;
+    &amp;lt;meta property=&quot;telegram:channel&quot; content=&quot;@yumeyuka&quot;&amp;gt;
+    
+    &amp;lt;!-- 图标 --&amp;gt;
+    &amp;lt;link rel=&quot;icon&quot; href=&quot;https://s3.yumeyuka.plus/2025/Image_1758222788424.webp&quot; type=&quot;image/webp&quot;&amp;gt;
+    
+    &amp;lt;!-- JavaScript重定向（备用方案） --&amp;gt;
+    &amp;lt;script&amp;gt;
+        window.location.replace(&quot;https://www.yumeyuka.plus/&quot;);
+    &amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &quot;redirects&quot;: [
+      {
+        &quot;source&quot;: &quot;$host&quot;,
+        &quot;destination&quot;: &quot;$wwwhost&quot;,
+        &quot;statusCode&quot;: 301
+      }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;如何解析&lt;/h2&gt;
+&lt;p&gt;将以上代码 部署到 Pages 新的项目，将apex 域，或者你想重定向的域解析到这个。
+将源站项目添加子域中转，CDN 加速页选择回源策略使用源站，虽然是有点沙雕，但是没办法的权宜之计&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/09/caff028c6ffdf2f8739643e99854333e.webp&quot; alt=&quot;image-20250926163605280&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/09/8f8889b95224d1163028a49f25455a73.webp&quot; alt=&quot;image-20250926163620315&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/09/7d07df27da68d39948e7b374369afc65.webp&quot; alt=&quot;image-20250926163644689&quot; /&gt;&lt;/p&gt;
+</content:encoded></item><item><title>从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床</title><link>https://www.yumeyuka.plus/posts/edgeone-gh/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/edgeone-gh/</guid><description>带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨</description><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;刚写完这个才发现有问题，如果 EO 是 NS 接入的话，可能会有问题， EO Pages 不能直接 CNAME 到 CDN  的节点，会直接 418 返回. EO 的 NS 接入坑还是有点多的，但是如果是域名在 CF 直接 cname 到 EO  还是会有问题，首先就是 CF 会默认给展平 APEX 域，这样 EO 那边就 永远不会到 CNAME 到，算是一个比较麻烦的问题，当然可以重定向解决这个问题，如果是 使用　CF Work 的话就需要域名解析商在 CF。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!WARNING]&lt;/p&gt;
@@ -79,8 +163,11 @@ DNS验证然后不用删记录，直接等它自己续费就好了&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-27.webp&quot; alt=&quot;23-22-27.webp&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;图片示例&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;https://s3.yumeyuka.plus/2025/23-22-30.webp&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-22-30.webp&quot; alt=&quot;23-22-30.webp&quot; /&gt;&lt;/p&gt;
-</content:encoded></item><item><title>网易云降噪小魔法</title><link>https://www.yumeyuka.plus/posts/cloudpress/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/cloudpress/</guid><description>可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(&gt;_&lt;)</description><pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;本来一个月前就该发出来的，最近突然想起来还没发出来，
+</content:encoded></item><item><title>网易云·静寂小魔法</title><link>https://www.yumeyuka.plus/posts/cloudpress/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/cloudpress/</guid><description>可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(&gt;_&lt;)</description><pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;本来一个月前就该发出来的，最近突然想起来还没发出来，
 这一版相比之前没什么区别，还是建议更新到此版本，上版是 &lt;code&gt;CPP&lt;/code&gt; 写的，这一版用 &lt;code&gt;kotlin native&lt;/code&gt; 重写了,逻辑上没有变化，还是监听前台进程然后kill
 掉多余的不需要的服务&lt;/p&gt;
 &lt;p&gt;国内的毒瘤 APP 都太多了，点名网易云最为代表，听歌 APP 什么都有，本来性能就很差，还要在后台留一堆不需要的服务，太坏了&lt;/p&gt;
@@ -151,7 +238,7 @@ main()
         sleep(CHECK_INTERVAL)
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c&lt;/p&gt;
+&lt;p&gt;xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c&lt;/p&gt;
 &lt;p&gt;Kt Native 编译出来的目标 ELF 大小上和 C++ 差距不大,但是运行时内存占用可谓是天差地别 ,差了近 10 倍 的内存占用 ,当然 Kt
 Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 一段时间之后 GC 会到25M ,差不多回收了 1/2 但是和 C++
 编译出来还是差距很大&lt;/p&gt;

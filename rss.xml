@@ -247,149 +247,120 @@ Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 
 &lt;p&gt;Kt Native MacOS 和 IOS 为大致为第一梯队 , Linux 差不多为第二梯队, Android 和Windows差不多就是第三梯队了&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/23-21-09.webp&quot; alt=&quot;23-21-09.webp&quot; /&gt;&lt;/p&gt;
-</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（下）</title><link>https://www.yumeyuka.plus/posts/hosts-dns-part2/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts-dns-part2/</guid><description>从最初的HOSTS.TXT到如今庞大的DNS体系，这篇小日记记录了域名解析的发展历程</description><pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;域名解析系统发展史&lt;/h2&gt;
-&lt;h3&gt;早期互联网和主机文件（HOSTS.TXT）&lt;/h3&gt;
-&lt;p&gt;在DNS出现之前，互联网的域名解析依赖于一个中心化的文件：HOSTS.TXT。这个文件由斯坦福研究所（SRI）的Network Information Center (NIC) 维护，列出了每个域名对应的IP地址。每台计算机必须手动下载并更新这个文件才能进行域名解析。&lt;/p&gt;
-&lt;p&gt;随着互联网的发展和联网设备数量的增加，这种方法逐渐显得低效和不可扩展。尤其是随着互联网向全球化发展，HOSTS.TXT文件变得过大且更新频繁，无法满足需求。&lt;/p&gt;
-&lt;p&gt;为了应对早期域名解析方案的局限性，Paul Mockapetris在1983年提出了DNS系统的概念并编写了最初的DNS协议规范（RFC 882 和 RFC 883，后被更完善的RFC 1034 和 RFC 1035替代）。DNS的核心思想是通过一个分布式、层级化的系统来进行域名解析，解决了HOSTS.TXT文件集中管理带来的扩展性问题&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://img.nightrainmilkyway.cn/img/v2-ed152d58f9c04e9a19e4a053c30dae38_1440w.png&quot;&gt;&lt;img src=&quot;https://img.nightrainmilkyway.cn/img/v2-ed152d58f9c04e9a19e4a053c30dae38_1440w.png&quot; alt=&quot;v2-ed152d58f9c04e9a19e4a053c30dae38_1440w.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;域名空间的扩展 (1980年代后期)&lt;/h3&gt;
-&lt;p&gt;随着DNS的推出，顶级域名（TLDs）逐渐被引入，并按照不同的用途分类：&lt;/p&gt;
+</content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（下）</title><link>https://www.yumeyuka.plus/posts/hosts-dns-part2/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts-dns-part2/</guid><description>从最初的HOSTS.TXT到如今庞大的DNS体系，这篇小日记记录了域名解析的发展历程</description><pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;域名解析系统的发展历程&lt;/h1&gt;
+&lt;p&gt;随着互联网从实验性网络演进为全球信息基础设施，**域名解析系统（DNS）**也在不断演进，以满足规模、性能与安全方面的需求。以下从早期方案到现代机制，梳理其关键发展节点。&lt;/p&gt;
+&lt;h2&gt;一、主机文件时代：HOSTS.TXT（1980 年代初）&lt;/h2&gt;
+&lt;p&gt;在 DNS 出现之前，所有域名解析依赖于一份集中维护的文本文件—— &lt;strong&gt;&lt;code&gt;HOSTS.TXT&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;由斯坦福研究所（SRI）网络信息中心（NIC）负责更新，记录域名与 IP 地址的对应关系&lt;/li&gt;
+&lt;li&gt;每台主机须定期下载并手动更新此文件，才能完成网址访问&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;随着联网设备激增，HOSTS.TXT 文件规模迅速膨胀，更新频率与分发成本骤增，系统效率和可扩展性难以为继&lt;/p&gt;
+&lt;h2&gt;二、DNS 系统的诞生与层级化设计（1983 年）&lt;/h2&gt;
+&lt;p&gt;为解决集中式方案的瓶颈，Paul Mockapetris 于 1983 年提出 DNS 概念，并在 RFC 882、RFC 883 中定义首版协议，后被 RFC 1034、RFC 1035 取代。&lt;br /&gt;
+DNS 的核心特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;分布式架构&lt;/strong&gt;：将域名空间拆分成多个负责不同子区的域名服务器。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;层级化命名&lt;/strong&gt;：以&lt;code&gt;“.”&lt;/code&gt;分隔，从根（&lt;code&gt;Root&lt;/code&gt;）到顶级域（TLD）、再到二级、三级域名，逐级查询并缓存结果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. 通用顶级域名（gTLD）&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;[!TIP]&lt;/p&gt;
-&lt;p&gt;通用顶级域名（gTLDs）：如 .com（商业组织）、.org（非营利组织）、.edu（教育机构）、.net（网络相关）。&lt;/p&gt;
-&lt;p&gt;国家顶级域名（ccTLDs）：如 .cn（中国）、.uk（英国）等，专门为各国或地区保留。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.com：面向各类商业实体与企业的网站；&lt;/li&gt;
+&lt;li&gt;.org：主要供非营利组织及公益机构使用；&lt;/li&gt;
+&lt;li&gt;.net：最初为网络服务提供商设计，现广泛用于互联网基础设施相关站点；&lt;/li&gt;
+&lt;li&gt;.edu：专用于经认证的教育机构及其下属学术单位；&lt;/li&gt;
+&lt;li&gt;.gov/.mil：分别保留给美国政府机构与军事部门。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;域名系统采用层次化结构，其中每一级用“.”符号分隔。根据域名的层级关系，域名可以分为顶级域名（TLD）、二级域名、三级域名等多级域名。下面详细介绍域名的层级划分：&lt;/p&gt;
+&lt;h3&gt;2. 国家和地区顶级域名（ccTLD）&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;顶级域名 (TLD)&lt;/li&gt;
+&lt;li&gt;以 ISO 3166-1 alpha-2 两字母代码表示，例如 .cn（中国）、.uk（英国）。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;顶级域名是域名结构的最高层级，位于域名最右边。TLD通常由ICANN（互联网名称与数字地址分配机构）管理。顶级域名分为以下几类：&lt;/p&gt;
-&lt;p&gt;通用顶级域名 (gTLDs)： 这些是最常见的顶级域名，用于特定用途或类型的网站：&lt;/p&gt;
-&lt;p&gt;.com：最初为商业机构设计，现在广泛用于各种网站。&lt;/p&gt;
-&lt;p&gt;.org：用于非营利组织，但也被许多其他组织采用。&lt;/p&gt;
-&lt;p&gt;.net：最初为网络服务提供商设计，现在广泛使用。&lt;/p&gt;
-&lt;p&gt;xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c&lt;/p&gt;
-&lt;p&gt;.gov：用于美国政府部门。&lt;/p&gt;
-&lt;p&gt;.mil：用于美国军事机构。
-国家顶级域名 (ccTLDs)： 每个国家或地区都有专门的顶级域名，以两个字母代码表示。常见的 ccTLD 包括：&lt;/p&gt;
-&lt;p&gt;.cn：中国&lt;/p&gt;
-&lt;p&gt;.uk：英国&lt;/p&gt;
+&lt;h3&gt;3. 二级及多级域名&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;二级域名&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;二级域名&lt;/strong&gt;：通常为组织或品牌标识，如 example.com 中的 example。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三级域名&lt;/strong&gt;及更高级别，通常用于区分子业务或区域服务，如 www.example.com、mail.google.com。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;二级域名是位于顶级域名之下的下一级域名，通常是组织或企业的名字，用来标识特定的组织、公司或个人。例如：&lt;/p&gt;
-&lt;p&gt;在www.example.com中，example是二级域名。&lt;/p&gt;
-&lt;p&gt;在www.google.cn中，google是二级域名。&lt;/p&gt;
-&lt;p&gt;二级域名通常由域名持有者根据其需求自定义，它们可以是企业名称、品牌、服务类型或其他识别符&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.yumeyuka.plus/2025/09/38972fb919b93dc6969bd72161fa71a9.webp&quot; alt=&quot;image-20250926173701750&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;4. 安全扩展：DNSSEC（1990 年代末至今)&lt;/h3&gt;
+&lt;p&gt;随着网络安全威胁加剧，原生 DNS 缺乏数据完整性与身份验证机制，易受到中间人和缓存投毒攻击。为此，**DNS 安全扩展（DNSSEC）**应运而生：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;三级域名及多级域名&lt;/li&gt;
+&lt;li&gt;对 DNS 记录链使用数字签名，确保查询结果未被篡改；&lt;/li&gt;
+&lt;li&gt;客户端验证签名后，方可信任域名映射。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;三级域名是位于二级域名之下的域名。三级及多级域名通常用于区分子站点、服务或功能。例如：&lt;/p&gt;
-&lt;p&gt;www：是一个常见的三级域名，表示网页服务（World Wide Web
-mail.google.com：mail是三级域名，表示谷歌的邮件服务（Gmail）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img.nightrainmilkyway.cn/img/v2-19057161c905080d05210161b0772ae1_1440w.webp&quot; alt=&quot;v2-19057161c905080d05210161b0772ae1_1440w.webp&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;DNSSEC 的引入 (1990年代末 - 2000年代)&lt;/h3&gt;
-&lt;p&gt;虽然DNS系统设计得非常灵活，但随着互联网的快速发展，安全问题逐渐显现。DNS系统缺乏对解析数据真实性的验证机制，容易受到攻击，如DNS欺骗（DNS Spoofing）和中间人攻击。&lt;/p&gt;
-&lt;p&gt;为了解决这些问题，DNSSEC（Domain Name System Security Extensions，域名系统安全扩展）在1990年代末提出，并在2000年代开始逐渐推广。DNSSEC通过对DNS记录进行数字签名，确保解析结果的真实性和完整性，防止恶意篡改。&lt;/p&gt;
-&lt;h3&gt;根域名服务器的全球部署&lt;/h3&gt;
-&lt;p&gt;DNS的根域名服务器是DNS体系中最顶层的服务器，最初只在美国部署。但为了提高DNS的可靠性和性能，根域名服务器逐渐被扩展到全球范围内。目前有13组根域名服务器，由不同的组织和公司管理，这些服务器分布在多个国家和地区，通过Anycast技术保证全球用户能够快速访问。
-&lt;img src=&quot;https://img.nightrainmilkyway.cn/img/%E4%B8%8B%E8%BD%BD%20(1).jpeg&quot; alt=&quot;下载 (1).jpeg&quot; /&gt;&lt;/p&gt;
-&lt;h4&gt;为什么DNS根服务器只能有13台？&lt;/h4&gt;
-&lt;p&gt;DNS协议的限制：DNS系统最早的设计是在1980年代，那个时候的互联网协议（如IPv4）和硬件性能都相对有限。DNS查询时使用的是UDP数据包，最大包大小为512字节。在这个限制下，返回给客户端的DNS查询结果列表必须足够小，以免超出512字节的限制&lt;/p&gt;
-&lt;p&gt;根服务器IP地址的数量：在DNS系统中，客户端查询根域名时需要获取根域名服务器的IP地址列表。DNS解析器通过“根提示文件”（root hints file）来获取所有根服务器的IP地址信息。13个根服务器的IP地址列表恰好能适应这个512字节的限制。&lt;/p&gt;
-&lt;h3&gt;国际化域名 (IDN) 的引入&lt;/h3&gt;
-&lt;p&gt;随着全球互联网用户数量的增长，尤其是非英语国家用户的增加，使用仅支持ASCII字符的域名系统逐渐显得不足。为了支持更多的语言字符，国际化域名（IDN）在2000年代引入，允许使用非拉丁字符的域名（如中文、阿拉伯文、韩文等）&lt;/p&gt;
+&lt;h2&gt;三、根域名服务器的全球部署&lt;/h2&gt;
+&lt;p&gt;DNS 根服务器最初仅部署于美国境内。为降低查询延迟、提升容灾能力，13 个逻辑根服务器实例通过 Anycast 技术，现已分布在全球多个节点，由不同组织共同管理。&lt;/p&gt;
+&lt;h3&gt;为什么根服务器逻辑上只有 13 个？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;UDP 包大小限制&lt;/strong&gt;：DNS 查询默认使用 UDP，最大报文长度 512 字节；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;根提示文件&lt;/strong&gt;：需在此限制内携带所有根服务器的 IP 列表；&lt;/li&gt;
+&lt;li&gt;13 个 IPv4 地址（另含 IPv6 扩展）恰能兼顾完整性与报文大小。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了支持中文、阿拉伯文、韩文等非拉丁字符，&lt;strong&gt;国际化域名（IDN&lt;/strong&gt;于 2000 年代推行。IDN 采用 Punycode 将 Unicode 字符映射为 ASCII，以兼容现有 DNS 协议，实现全球多语言域名互访。&lt;/p&gt;
 </content:encoded></item><item><title>DNS的秘密日记～从hosts开始的物语（上）</title><link>https://www.yumeyuka.plus/posts/hosts_dns_part1/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/hosts_dns_part1/</guid><description>从hosts酱到DNS君的故事～带你认识域名解析的基础原理，理解为什么修改hosts能直连</description><pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;hosts 是什么？&lt;/h2&gt;
-&lt;p&gt;在很早很早以前，域名解析系统还没有建立起来，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hosts 文件就可以找到对方的 IP 地址然后建立连接了&lt;/p&gt;
-&lt;p&gt;但是后来随着互联网的规模不断扩大，&lt;code&gt;hosts&lt;/code&gt;文件的维护也越来越困难，毕竟全球的网络主机都需要通过这个负责维护 hosts 更新站点来更新，hosts 所存放的解析记录数量级不断增加，单单只是检索就要花不少时间 &lt;a&gt;修改hosts文件理解DNS - （下）&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;当我们打开这个&lt;code&gt;hosts&lt;/code&gt;文件之后可以发现里面有一下内容&lt;/p&gt;
-&lt;p&gt;Windows 目录是: &lt;code&gt;C:\Windows\System32\drivers\etc\hosts&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Linux 目录是: &lt;code&gt;/etc/hosts&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;很久以前，互联网刚起步时，全世界的主机数量极少，域名解析完全依赖于每台设备本地的 &lt;code&gt;hosts&lt;/code&gt; 文件。这份文件里记录了互联网上所有主机的域名和对应 IP 地址。当时并没有 DNS 服务器，大家只要从专门的维护站点下载最新的 &lt;code&gt;hosts&lt;/code&gt; 文件，就能直接在本机通过它完成访问。想访问哪个域名，就翻开 &lt;code&gt;hosts&lt;/code&gt; 文件，找到对应的 IP，连上就行了。&lt;/p&gt;
+&lt;p&gt;但随着互联网用户和服务器数量的爆炸式增长，所有人都去同一个地方拉 &lt;code&gt;hosts&lt;/code&gt; 文件，文件体量越来越大、更新也越来越频繁，单是检索就耗费不少时间，根本难以支撑庞大且分布全球的网络。&lt;/p&gt;
+&lt;p&gt;当你打开 &lt;code&gt;hosts&lt;/code&gt; 文件，会看到这样的记录：&lt;/p&gt;
+&lt;p&gt;Windows 路径：&lt;code&gt;C:\Windows\System32\drivers\etc\hosts&lt;/code&gt;&lt;br /&gt;
+Linux 路径：&lt;code&gt;/etc/hosts&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;127.0.0.1       localhost
-::1     localhost ip6-localhost ip6-loopback
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-20.205.243.166　　github.com
-61.91.161.217	www.google.com
-61.91.161.217	google.com
-61.91.161.217	gcr.io
-61.91.161.217	www.gcr.io
-61.91.161.217	com.google
-61.91.161.217	admin.google.com
-61.91.161.217	accounts.google.com
-61.91.161.217	accounts.google.cn
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+20.205.243.166  github.com
+61.91.161.217   www.google.com
+61.91.161.217   google.com
+61.91.161.217   gcr.io
+…
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;看到第一行就是我们所熟悉的&lt;code&gt;127.0.0.1　　localhost&lt;/code&gt;，就是在hosts中定义的&lt;/p&gt;
-&lt;p&gt;可以看第 5 行前面是 IP 后面是域名一一对应，是不是突然就明白了这个&lt;code&gt;hosts&lt;/code&gt;文件的作用&lt;/p&gt;
-&lt;h2&gt;DNS 是什么&lt;/h2&gt;
-&lt;p&gt;DNS（Domain Name System，域名系统），将人类可读的域名（例如 www.example.com）转换为机器用于相互通信的IP地址（例如 192.0.2.1 或 2001:db8::1）的一种分布式数据库。打个比方来说，DNS就像一个电话簿，IP相当于电话号码，域名相当于联系人&lt;/p&gt;
-&lt;p&gt;这几条可以看出一个 IP 地址可以同时对应多个域名，这也就是为什么平时在地址栏上输入 google.com或www.google.com都可以访问 google 了。而https://是浏览器自动帮你加上去的，平时我们访问不了 google 的原因是，google 的域名 在本机转化为 IP 地址后经过中国大陆的防火长城，被防火长城检测到与黑名单内的关键词匹配（如：Google、Facebook、twitter等都在黑名单内），然后就会伪装成目标域名的解析服务器返回虚假的查询结果。关键的是通常的域名查询没有任何认证机制，而且域名的查询一般是基于无连接不可靠的 UDP 协议，所以浏览器只能接受最先到达的格式正确结果，并把之后的所有结果丢弃。所以这也就访问不了啦，这种情况就是所谓的 DNS 缓存污染，也称为 DNS 缓存投毒（这个真形象…）&lt;a href=&quot;https://famousczm.github.io/2017/05/07/%E4%BB%8E%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E4%B8%AD%E7%90%86%E8%A7%A3DNS%EF%BC%88%E4%B8%8A%EF%BC%89/&quot;&gt;参考文献-从修改hosts文件科学上网中理解DNS（上）&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;一个域名背后可以有多个I地址。当域名解析服务器在解析域名记录的“值”中包含多个IP地址时，LDNS会返回所有IP地址，但返回I地址的顺序是随机的。浏览器默认选取第一个返回的 IP地址作为解析结果，其解析流程如下。&lt;/p&gt;
+&lt;p&gt;最常见的第一行 &lt;code&gt;127.0.0.1 localhost&lt;/code&gt;，就是把域名 &lt;code&gt;localhost&lt;/code&gt; 直接映射到本机。第 5 行的内容告诉我们：访问 &lt;code&gt;github.com&lt;/code&gt; 时，直接连到 &lt;code&gt;20.205.243.166&lt;/code&gt;。一看 IP 在前、域名在后，就能瞬间明白 &lt;code&gt;hosts&lt;/code&gt; 文件的作用了——把域名和 IP 直接绑在一起。&lt;/p&gt;
+&lt;h2&gt;DNS 是什么？&lt;/h2&gt;
+&lt;p&gt;DNS（Domain Name System，域名系统）则是后来应运而生的一套分布式数据库，专门负责把人类更易记的域名（如 &lt;code&gt;www.example.com&lt;/code&gt;）转换为计算机能识别的 IP 地址（如 &lt;code&gt;192.0.2.1&lt;/code&gt; 或 &lt;code&gt;2001:db8::1&lt;/code&gt;）。可以把 DNS 想象成电话簿，名字是域名，电话号码则是 IP。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一条域名解析记录可以对应多个 IP，所以你在浏览器地址栏输入 &lt;code&gt;google.com&lt;/code&gt; 或 &lt;code&gt;www.google.com&lt;/code&gt; 都能访问同一个网站。&lt;/li&gt;
+&lt;li&gt;浏览器访问时会先加上 &lt;code&gt;https://&lt;/code&gt;，但根本原因还是 DNS 把域名转成 IP。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不过，在中国大陆访问 Google 时，由于 GFW（防火长城）会检测到域名里含有“Google”这样的关键词，它会伪装成 DNS 服务器给你返回一个错误甚至恶意的 IP。因为 DNS 查询通常基于无连接、且不可靠的 UDP 协议，浏览器只会接受第一个格式正确的响应，后续正常响应就被丢弃了，于是就连不上了。这种现象叫 &lt;strong&gt;DNS 缓存污染&lt;/strong&gt; 或 &lt;strong&gt;DNS 投毒&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考：从修改 hosts 文件科学上网中理解 DNS（上）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;DNS 解析流程与多 IP 负载&lt;/h2&gt;
+&lt;p&gt;当一个域名在其权威 DNS 记录中有多个 IP 时，Local DNS（LDNS）会把它们全部返回，并随机打乱顺序。浏览器通常默认选第一个 IP 去访问：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;网站访问者通过浏览器向Local DNS（简称LDNS）发送解析请求。&lt;/li&gt;
-&lt;li&gt;LDNS将解析请求逐级转发（递归）至权威DNS。&lt;/li&gt;
-&lt;li&gt;权威DNS在收到解析请求后，将所有I地址以随机顺序返回LDNS。&lt;/li&gt;
-&lt;li&gt;xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c&lt;/li&gt;
-&lt;li&gt;网站访问者的浏览器随机访问其中一个I地址，通常（不是绝对）选取第一个返回的IP地址。在没有做反向代理的情况下，如果返回的IP地址有多个，那么访问到这些IP地址的机会一般是均等的。&lt;/li&gt;
+&lt;li&gt;浏览器向 LDNS 发起解析请求。&lt;/li&gt;
+&lt;li&gt;LDNS 递归查询上级 DNS 服务器，直到权威 DNS。&lt;/li&gt;
+&lt;li&gt;权威 DNS 返回所有 IP，顺序随机。&lt;/li&gt;
+&lt;li&gt;浏览器挑第一个 IP 连接，若无反向代理，每个 IP 被访问的机会大致相等。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;https://img.nightrainmilkyway.cn/img/v2-c3392cab45f8241c0369ec6457000df8_1440w.webp&quot; alt=&quot;v2-c3392cab45f8241c0369ec6457000df8_1440w.webp&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;在DNS解析的描述过程中，浏览器首先通过本地的DNS服务（LDNS）发送第一个
-解析请求，然后由LDNS返回IP地址，访问对应的服务器所提供的互联网服务。
-这样就带来了一个问题：如果LDNS返回的不是公网的域名解析服务解析出的IP地址，
-而是经过本地篡改的呢？&lt;/p&gt;
-&lt;h3&gt;域名篡改&lt;/h3&gt;
-&lt;p&gt;域名会被篡改吗？或域名解析服务器在解析域名后返回的IP地址会被篡改吗？
-在回答上述问题前，我们先查看Linux系统中有关DNS的配置文件。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;/etc/hosts&lt;/code&gt;：记录hostname对应的IP地址
-&lt;code&gt;/etc/resolv.conf&lt;/code&gt;：设置DNS服务器的IP地址
-&lt;code&gt;/etc/host.conf&lt;/code&gt;：指定域名解析的顺序，是先从hosts 解析还是先从DNS解析&lt;/p&gt;
-&lt;p&gt;LDNS 优先解析hosts 文件（Windows 路径是&lt;code&gt;C：\Windows\System32\driversletclhosts&lt;/code&gt;）,在hosts文件中，改变域名指向的I地址，我们将不会访问到原来的公网主机。示例如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[root@linuxido ~]# ping linuxido.com({})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;→在修改前，对城名执行ping命令&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;PING linuxido.com (123.56.94.254) 56(84) bytes of data.
-64 bytes from 123.56.94.254 (123.56.94.254): icmp _seq=1 ttl=53 time=25.6 ms
-[root@linuxido ~l# dig +short linuxido.com
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;→使用dig命令解析域名&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;123.56.94.254
-##→修改域名对应的IP地址
-[root@linuxido~]# echo &apos;120.120.120.120 linuxido.com&apos; &amp;gt;&amp;gt; /etc/hosts
+&lt;p&gt;![DNS解析流程示意图](https://img.nightrainmilkyway.cn/img/v2-c3392cab45f8241c0369ec6457000df8_144名篡改与劫持&lt;/p&gt;
+&lt;h3&gt;修改 hosts 劫持解析&lt;/h3&gt;
+&lt;p&gt;本地解析优先级：&lt;code&gt;hosts &amp;gt; DNS&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当你在 &lt;code&gt;/etc/hosts&lt;/code&gt; （或 Windows 的 &lt;code&gt;hosts&lt;/code&gt;）中写入某条记录后，系统会直接使用本地的映射，完全绕过远程 DNS。&lt;/li&gt;
+&lt;li&gt;这也是为什么很多翻墙教程里教你修改 &lt;code&gt;hosts&lt;/code&gt;，可以直接“直连” GitHub、Google 等被屏蔽的网站。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;# 修改前，ping 到真实公网 IP
+ping linuxido.com
+# dig 查看到的也是 123.56.94.254
 
-[root@linuxido~]# ping linuxido.com
+# 在 /etc/hosts 里追加
+echo &apos;120.120.120.120 linuxido.com&apos; &amp;gt;&amp;gt; /etc/hosts
+
+# 修改后，ping 走本地 hosts 指定的 IP
+ping linuxido.com  # 会尝试连 120.120.120.120
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;→修改后，再对域名执行ping命今&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;PING linuxido.com (120.120.120.120) 56(84) bytes of data.
-并→可以看到ping命令失败，无法ping通120.120.120.120
+&lt;p&gt;但注意，&lt;code&gt;dig&lt;/code&gt;、&lt;code&gt;host&lt;/code&gt;、&lt;code&gt;nslookup&lt;/code&gt; 等工具在默认查询时还是会去 DNS 服务器（如 8.8.8.8）抓记录，不走 hosts，所以它们依然会返回真实的公网 IP。&lt;/p&gt;
+&lt;h3&gt;DNS 劫持与污染&lt;/h3&gt;
+&lt;p&gt;真正的 DNS 劫持是指攻击者或中间人伪造 DNS 响应，把域名指向恶意 IP；&lt;strong&gt;DNS 缓存污染&lt;/strong&gt;（DNS cache pollution）便是中毒后的 DNS 服务器缓存了错误的记录，导致所有下游用户都被“毒害”。&lt;/p&gt;
+&lt;p&gt;防范方法包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用可信的 DNS-over-HTTPS（DoH）或 DNS-over-TLS（DoT）服务；&lt;/li&gt;
+&lt;li&gt;开启 DNSSEC 验证，确保收到的响应带有数字签名且未被篡改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;用 hosts 实现科学上网&lt;/h2&gt;
+&lt;p&gt;以 GitHub 为例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;20.205.243.166  github.com
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;→使用host命令解析城名，可以看到依然是公网IP地址&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[root@linuxido~l# host linuxido.com
-linuxido.com has address 123.56.94.254[root@linuxido ~]# nslookup linuxido.com Server:
-Address:
-8.8.8.8
-8.8.8.8#53
-Non-authoritative answer:
-Name:
-linuxido.com Address: 123.56.94.254
-[root@linuxido ~]# dig linuxido.com
-linuxido.com.
-599
-IN
-A
-123.56.94.254
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;##一修改hosts 文件后，dig命令解析的城名依然是公网IP地址。找寻A的记录，它是不经过LDNS
-iSERVER:8.8.8.8#53（8.8.8.8)
-##→本机的DNS地址设置为8.8.8.8，DNS的默认端口是53
-如果没有修改 hosts 文件，在什么情况下可能出现DNS返回错误的IP 地址呢？域名劫持是最可能出现的情况。域名劫持就是通过攻击或伪造域名解析服务器的方式，把目标网站域名解析到错误的 I地址，从而使用户访问一些非法、恶意网站。因此，我们需要使用域名解工具查看访问域名是都真正对应IP地址&lt;/p&gt;
-&lt;h3&gt;DNS污染&lt;/h3&gt;
-&lt;p&gt;网域服务器缓存污染（英语：DNS cache pollution）、DNS污染或DNS劫持，是一种破坏域名系统查询解析的行为。[1]通常有计算机程序自动执行DNS劫持攻击导致DNS服务器缓存了错误记录的现象。而域名服务器缓存投毒（DNS cache poisoning）和DNS缓存投毒指由计算机程序执行的DNS劫持攻击。污染一词可能取自域名系统域名解析之特性，若递归DNS解析器查询上游时收到错误回复，所有下游也会受影响 &lt;a href=&quot;https://zh.m.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93&quot;&gt;参考文献（3）-域名服务器缓存污染&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;hosts是如何实现科学上网的&lt;/h2&gt;
-&lt;p&gt;这里以GitHub为例&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;20.205.243.166　　github.com
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;GitHub站点毕竟在国外，当dns请求时返回最快的那一个IP，但是想要访问就肯定要走大陆宽带，防火长城就会返回一个假的结果，那么hosts为什么能直接连上GitHub呢，这里就不得不提及域名解析的优先级了，&lt;code&gt;hosts &amp;gt; DNS&lt;/code&gt;，在DNS域名解析系统建立起来之后hosts被弃用，但仍然保留在Linux，Windows系统内，而且优先级一般大于dns解析结果，从而能够建立连接&lt;/p&gt;
-&lt;p&gt;当然，如果想流畅的访问GitHub单单只是修改hosts效果并不明显，可以搭配&lt;a href=&quot;https://github.com/WangGithubUser/FastGitHub&quot;&gt;FastGithub&lt;/a&gt;合法的工具访问
-&lt;img src=&quot;https://img.nightrainmilkyway.cn/img/20.205.243.166.png&quot; alt=&quot;20.205.243.166.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;当你修改 hosts，把 &lt;code&gt;github.com&lt;/code&gt; 指向官方最快 IP，系统就不再走中国大陆的 DNS，而是直接根据本地映射去连接，这样就能“直连”GitHub。不过单靠 hosts 有时也不够流畅，通常还会配合 FastGithub 等加速工具一起使用。&lt;/p&gt;
 </content:encoded></item></channel></rss>

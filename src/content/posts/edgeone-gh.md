@@ -119,4 +119,6 @@ https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/
 
 ### 图片示例
 
+- https://s3.yumeyuka.plus/2025/23-22-30.webp
+
 ![23-22-30.webp](https://s3.yumeyuka.plus/2025/23-22-30.webp)

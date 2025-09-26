@@ -1,8 +1,8 @@
 ---
-title: 网易云降噪小魔法
+title: 网易云·静寂小魔法
 published: 2025-07-07
 description: "可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(>_<)"
-image: "https://s3.yumeyuka.plus/2025/1758683230892.webp"
+image: "https://s3.yumeyuka.plus/2025/1758870730861.webp"
 tags: [ "网易云","Music" ]
 category: 知识
 draft: false
@@ -71,7 +71,7 @@ main()
 
 ```
 
-xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c
+xxxxxxxxxx // 动态显示数码管void DisplaySMG_Dynamic() {  SelectBit(0);  SelectSegment(SMG_NoDot[hour / 10]);  DelaySMG(500);​  SelectBit(1);  SelectSegment(SMG_NoDot[hour % 10]);  DelaySMG(500);​  SelectBit(2);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(3);  SelectSegment(SMG_NoDot[minute / 10]);  DelaySMG(500);​  SelectBit(4);  SelectSegment(SMG_NoDot[minute % 10]);  DelaySMG(500);​  SelectBit(5);  SelectSegment(SMG_NoDot[16]);  DelaySMG(500);​  SelectBit(6);  SelectSegment(SMG_NoDot[second / 10]);  DelaySMG(500);​  SelectBit(7);  SelectSegment(SMG_NoDot[second % 10]);  DelaySMG(500);}​c
 
 Kt Native 编译出来的目标 ELF 大小上和 C++ 差距不大,但是运行时内存占用可谓是天差地别 ,差了近 10 倍 的内存占用 ,当然 Kt
 Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 一段时间之后 GC 会到25M ,差不多回收了 1/2 但是和 C++

@@ -3,7 +3,7 @@
   "redirects": [
     {
       "source": "$host",
-      "destination": "$wwwhost",
+      "destination": "https://www.yumeyuka.plus/",
       "statusCode": 301
     }
   ],

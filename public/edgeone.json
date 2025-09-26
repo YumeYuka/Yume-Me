@@ -2,8 +2,8 @@
   "name": "yumeyuka-plus",
   "redirects": [
     {
-      "source": "$host",
-      "destination": "$wwwhost",
+      "source": "yumeyuka.plus/:path*",
+      "destination": "www.yumeyuka.plus/:path*",
       "statusCode": 301
     }
   ],

@@ -1,9 +1,54 @@
 {
+  "name": "yumeyuka-plus",
   "redirects": [
     {
-      "source": "yumeyuka.plus",
-      "destination": "www.yumeyuka.plus",
-      "statusCode": 302
+      "source": "$host",
+      "destination": "$wwwhost",
+      "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/assets/*",
+      "destination": "/assets-new/:splat"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/*",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "max-age=7200"
+        }
+      ]
+    },
+    {
+      "source": "/assets/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }
+      ]
+    }
+  ],
+  "caches": [
+    {
+      "source": "/images/*",
+      "cacheTtl": 86400
+    },
+    {
+      "source": "/sitemap.xml",
+      "cacheTtl": 0
+    },
+    {
+      "source": "/images/*.jpg",
+      "cacheTtl": 3600
     }
   ]
 }

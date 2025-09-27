@@ -26,7 +26,7 @@ export const siteConfig: SiteConfig = {
     },
     favicon: [    // Leave this array empty to use the default favicon
         {
-          src: '/favicon/yumeyuka.jpg',    // Path of the favicon, relative to the /public directory
+          src: '/favicon/梦璃.webp',    // Path of the favicon, relative to the /public directory
           // theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
           // sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
         }
@@ -54,7 +54,8 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-    avatar: 'assets/images/YumeYuka.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    avatar: 'assets/images/梦璃.webp',  // Relative to the /src directory. Relative to the /public directory if it
+    // starts with '/'
     name: '梦璃酱',
     bio: '一つの心臓の両面に傷を負う',
     links: [

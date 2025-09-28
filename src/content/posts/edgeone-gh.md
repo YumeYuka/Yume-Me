@@ -1,10 +1,15 @@
 ---
 title: 从 EdgeOne 开始的奇妙旅程——加速你的 GitHub 图床
 published: 2025-09-23
-description: '带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨'
-image: 'https://s3.yumeyuka.plus/2025/23-20-43.webp'
-tags: [ "edgeone","github" ]
-category: '知识'
+description: 带你揭秘图床加速的神奇世界，了解怎么用 Cloudflare 和 EdgeOne 魔法，让你的图片飞起来！✨
+image: https://s3.yumeyuka.plus/2025/23-20-43.webp
+tags:
+  - edgeone
+  - github
+  - EO
+  - DNS
+  - 域名解析
+category: 知识
 draft: false
 ---
 
@@ -28,9 +33,7 @@ draft: false
  > ![image-20250926001633263](https://s3.yumeyuka.plus/2025/09/814336ab2ef7f351a79f95de8d24cf69.webp)
  >
  > 
- >
  > ![image-20250926001242062](https://s3.yumeyuka.plus/2025/09/5ebcb53f599a261df4152b074f1aae29.webp)
- >
 
 
 
@@ -81,8 +84,8 @@ EO Pages 和 cdn 节点不一样，pages 最多给分配30个节点，由于直�
 ![23-22-10.webp](https://s3.yumeyuka.plus/2025/23-22-10.webp)
 
 在 SSL 证书申请选择： 建议使用 腾讯云 申请 SSL 的证书，至于为什么因为后面优选 IP 需要用到 ，优选 IP 原有的 cname 记录会失效，然后
-A 记录直接解析到优选 IP ，如果选择申请免费的证书，cname 失效之后会导致 续签失败，建议直接使用 腾讯云申请的 SSL 证书，选择
-DNS验证然后不用删记录，直接等它自己续费就好了
+
+A 记录直接解析到优选 IP ，如果选择申请免费的证书，cname 失效之后会导致 续签失败，建议直接使用 腾讯云申请的 SSL 证书，选择DNS验证然后不用删记录，直接等它自己续费就好了
 
 ![23-22-16.webp](https://s3.yumeyuka.plus/2025/23-22-16.webp)
 
@@ -107,7 +110,7 @@ DNS验证然后不用删记录，直接等它自己续费就好了
 
 ## Github 配置
 
-在 `setting` 生成一个 token 然后 使用 `piclist picgo` 等其他的图床工具，配合 `Typora` 写，确实很不错的
+在 `setting` 生成一个 token 然后 使用 `piclist picgo`  CV等其他的图床工具，配合 `Typora` 写，确实很不错的
 
 注意 自定义域名部分, 拼接部分需要注意，相对于使用 eo pages 然后去链接 `GitHub` 储存库然后每次上传都要 build 好很多
 
@@ -119,6 +122,7 @@ https://github.yumeyuka.plus/Keira-Yuki/picture/refs/heads/Yume/
 
 ### 图片示例
 
-- https://s3.yumeyuka.plus/2025/23-22-30.webp
+- <u>https://s3.yumeyuka.plus/2025/23-22-30.webp</u>
 
 ![23-22-30.webp](https://s3.yumeyuka.plus/2025/23-22-30.webp)
+

@@ -1,9 +1,11 @@
 ---
 title: 网易云·静寂小魔法
 published: 2025-07-07
-description: "可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(>_<)"
-image: "https://s3.yumeyuka.plus/2025/1758870730861.webp"
-tags: [ "网易云","Music" ]
+description: 可恶的网易云！明明只是想安静听歌，结果还要跟压制模块斗智斗勇(>_<)
+image: https://s3.yumeyuka.plus/2025/09/420f95417bd270da0410b030ffc3e062.webp
+tags:
+  - 网易云
+  - Music
 category: 知识
 draft: false
 ---

@@ -1,15 +1,20 @@
 ---
 title: Pages × CDN：跳转的另一边
 published: 2025-09-26
-description: 'Pages酱遇到CDN君就会报418，还不听话的Apex只好靠重定向魔法解决啦～'
-image: 'https://s3.yumeyuka.plus/2025/1758870738265.webp'
-tags: ["EO", "域名解析", "重定向"]
-category: '知识'
+description: Pages酱遇到CDN君就会报418，还不听话的Apex只好靠重定向魔法解决啦～
+image: https://s3.yumeyuka.plus/2025/09/459257fddb47f23140ca880d2c005c89.webp
+tags:
+  - EO
+  - 域名解析
+  - 重定向
+  - edgeone
+  - DNS
+category: 知识
 draft: false
 ---
-## 前情提要
+# 前情提要
 
-> [!TIP]
+> [!tip]
 >
 > **https://www.yumeyuka.plus/posts/edgeone-gh/**
 
@@ -22,7 +27,7 @@ draft: false
 - 非大陆站点，即境外站点，例如 `GitHub Pages Vercel Netlify Cloudflare Pgaes / Work` 等，使用 CDN 加速无意义
 - 重复第三条，当 Apex 和 www 子域及其它变体绑定到同一  Pages 时，无法通过 `edgeone.json` 进行重定向，此处需要满足同时使用第二条，否则无限重定向
 
-## 那么如何解决 Apex 重定向到 www 子域呢
+# 那么如何解决 Apex 重定向到 www 子域呢
 方法有很多，这里我通过使用分2个 Pages 项目部署，将 Apex 绑定到新的 Pages 项目，新建 `index.html`  `edgeone.json` 进行重定向，需要在 index.html中填入和需要重定向内容相同的 `head` 内容，例如 og 这种
 
 

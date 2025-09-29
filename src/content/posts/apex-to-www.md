@@ -14,11 +14,12 @@ draft: false
 ---
 # 前情提要
 
-> [!tip]
+> [!TIP]
 >
 > **https://www.yumeyuka.plus/posts/edgeone-gh/**
 
 ## 结论：
+
 
 - 如果 Pages 直接解析到 CDN 节点，会返回一个 `418`
 - 如果要 Pages 再套一层 CDN 节点则不能直接 CNAME 到分配的解析记录，需要绑定一个中转的子域名， 然后由需要加速的域名的源站填写中转的域名，否则同上返回 `418`
@@ -28,7 +29,7 @@ draft: false
 - 重复第三条，当 Apex 和 www 子域及其它变体绑定到同一  Pages 时，无法通过 `edgeone.json` 进行重定向，此处需要满足同时使用第二条，否则无限重定向
 
 # 那么如何解决 Apex 重定向到 www 子域呢
-方法有很多，这里我通过使用分2个 Pages 项目部署，将 Apex 绑定到新的 Pages 项目，新建 `index.html`  `edgeone.json` 进行重定向，需要在 index.html中填入和需要重定向内容相同的 `head` 内容，例如 og 这种
+方法有很多，这里我通过使用分 2 个 Pages 项目部署，将 Apex 绑定到新的 Pages 项目，新建 `index.html`  `edgeone.json` 进行重定向，需要在 index.html 中填入和需要重定向内容相同的 `head` 内容，例如 og 这种
 
 
 ```html title="index.html" collapse={11-43} ins={"1":8-9} ins={"2":45-48}
@@ -97,7 +98,8 @@ draft: false
 ```
 
 ## 如何解析
-将以上代码 部署到 Pages 新的项目，将apex 域，或者你想重定向的域解析到这个。
+
+将以上代码 部署到 Pages 新的项目，将 apex 域，或者你想重定向的域解析到这个。
 将源站项目添加子域中转，CDN 加速页选择回源策略使用源站，虽然是有点沙雕，但是没办法的权宜之计  
 
 ![image-20250926163605280](https://s3.yumeyuka.plus/2025/09/caff028c6ffdf2f8739643e99854333e.webp)

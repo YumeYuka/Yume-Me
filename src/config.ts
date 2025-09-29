@@ -1,4 +1,12 @@
-import type {ExpressiveCodeConfig, LicenseConfig, NavBarConfig, ProfileConfig, SiteConfig, UmamiConfig} from "./types/config";
+import type {
+    ExpressiveCodeConfig,
+    GitHubEditConfig,
+    LicenseConfig,
+    NavBarConfig,
+    ProfileConfig,
+    SiteConfig,
+    UmamiConfig
+} from "./types/config";
 import {LinkPreset} from "./types/config";
 
 export const siteConfig: SiteConfig = {
@@ -6,7 +14,8 @@ export const siteConfig: SiteConfig = {
     subtitle: 'YumeYuka Blog of Dreams',
     lang: 'zh_CN',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
     themeColor: {
-        hue: 160,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+        hue: 360,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250,
+        // pink: 345
         fixed: false,     // Hide the theme color picker for visitors
     },
     banner: {
@@ -26,9 +35,9 @@ export const siteConfig: SiteConfig = {
     },
     favicon: [    // Leave this array empty to use the default favicon
         {
-          src: '/favicon/梦璃.webp',    // Path of the favicon, relative to the /public directory
-          // theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-          // sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
+            src: '/favicon/梦璃.webp',    // Path of the favicon, relative to the /public directory
+            // theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+            // sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
         }
     ]
 }
@@ -72,7 +81,7 @@ export const profileConfig: ProfileConfig = {
         {
             name: 'Tg',
             icon: 'fa6-brands:telegram',
-            url: 'https://t.me/YumeYuka',
+            url: 'https://t.me/YumeYuka_official',
         },
     ],
 }
@@ -102,4 +111,9 @@ export const statsConfig = {
     loadingText: "统计加载中...",
     unavailableText: "统计不可用。请检查是否屏蔽了Umami域名，如AdGuard和AdBlock等插件",
     getStatsText: (pageViews: number, visits: number) => `${statsConfig.viewsText} ${pageViews} · ${statsConfig.visitsText} ${visits}`,
+};
+
+export const gitHubEditConfig: GitHubEditConfig = {
+    enable: true,
+    baseUrl: "https://github.com/YumeYuka/Yume-Me/edit/main/src/content/posts",
 };

@@ -107,3 +107,8 @@ export type UmamiConfig = {
     shareId: string;
     timezone: string;
 };
+
+export type GitHubEditConfig = {
+    enable: boolean;
+    baseUrl: string;
+};

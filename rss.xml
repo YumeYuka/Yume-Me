@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>YumeYuka Blog of Dreams</description><link>https://www.yumeyuka.plus/</link><language>zh_CN</language><item><title>掉进 EdgeOne 的陷阱后，我这样爬出来了～</title><link>https://www.yumeyuka.plus/posts/edgeone-trap-diary/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/edgeone-trap-diary/</guid><description>EdgeOne 表面上是贴心的加速小天使，其实暗藏各种小坑！这篇文章就是我一路踩雷、填坑、升级打怪的冒险故事～</description><pubDate>Sat, 27 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;前情提要&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>梦璃酱</title><description>梦——现実の続きであり、现実——梦の终わりである</description><link>https://www.yumeyuka.plus/</link><language>zh_CN</language><item><title>掉进 EdgeOne 的陷阱后，我这样爬出来了～</title><link>https://www.yumeyuka.plus/posts/edgeone-trap-diary/</link><guid isPermaLink="true">https://www.yumeyuka.plus/posts/edgeone-trap-diary/</guid><description>EdgeOne 表面上是贴心的加速小天使，其实暗藏各种小坑！这篇文章就是我一路踩雷、填坑、升级打怪的冒险故事～</description><pubDate>Sat, 27 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;前情提要&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!TIP]&lt;/p&gt;
 &lt;ul&gt;
@@ -329,7 +329,7 @@ Native 会自动 GC 回收内存, 以本模块为例,大概 刚运行时为 50M 
 &lt;p&gt;在互联网刚起步的年代，主机数量极少，域名解析完全依赖本地的 &lt;code&gt;hosts&lt;/code&gt; 文件。这份集中维护的文本记录了域名与 IP 的对应关系。用户通过下载最新的
 &lt;code&gt;hosts&lt;/code&gt; 文件，就能在本机直接完成访问。&lt;/p&gt;
 &lt;p&gt;当你打开 &lt;code&gt;hosts&lt;/code&gt; 文件，会看到如下路径和示例内容：&lt;/p&gt;
-&lt;p&gt;Windows 路径：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Windows 路径：&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;C:\Windows\System32\drivers\etc\hosts
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Linux 路径：&lt;/p&gt;

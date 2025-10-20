@@ -15,7 +15,7 @@ draft: false
 
 当你打开 `hosts` 文件，会看到如下路径和示例内容：
 
-Windows 路径：
+**Windows 路径：**
 
 ```text
 C:\Windows\System32\drivers\etc\hosts

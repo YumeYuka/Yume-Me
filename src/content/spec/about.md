@@ -1,49 +1,16 @@
+## 梦璃魔女的小本本
 
-<h1 align="center">梦璃魔女的魔法笔记</h1>
-<div align="center">
-
-Ciallo～(∠・ω< )⌒★
-
-这里是游走在代码与幻想之间的见习魔女，伊雷娜大人的忠实学徒~
-
-## 魔女的小窝
-
-[点击加入魔女会~](https://qq.yumeyuka.plus)
-
-欢迎来到魔女的小窝，和更多小伙伴一起玩耍、交流魔法与代码！
+**Ciallo～(∠・ω< )⌒★**
+<img src="https://github.com/YumeYuka/YumeYuka/blob/main/img/20251027_003616_upscayl_3x_upscayl-standard-4x.png?raw=true" alt="梦璃酱" width="170" align="right" style="margin-left: 15px;">
 
 
-## 魔女日记摘抄
+我是梦璃，一个喜欢写代码、也喜欢追番的小学生。每天都在学新的东西，尤其偏爱 **C++** 和 **Kotlin**，对 **Java** 的兴趣始终提不起来。最近迷上了前端开发，想用技术做出既好看又实用的作品。**伊蕾娜** 是我最喜欢的角色，是我的本命，光是看到她心里就会安稳不少。
 
-> “这世界很宽容，宽容到允许抬高三公分的枪口，也宽容到每个人都可以问心无愧地活着。
-> 没有人理应要求你爱这个世界，但我由衷希望你爱着自己。”
->
-> —— 某个调试到天明的夜晚，伊雷娜大人的话语在终端闪烁
+白天，我在编辑器里和各种奇怪的 bug 作战；夜里，就缩在被窝里追番或刷二创小视频。偶尔也会打开原神放松一下，不过更多时候，我沉浸在 ACG 的世界里。就在代码和 ACG 之间切换，让自己的生活频道慢慢调到最合适的频率。
 
-## 和我一起成为好朋友吧！
-
-[✨ 点击这里参观魔女的魔法工坊 → YumeYuka.plus ✨](https://YumeYuka.plus)
-
-欢迎与我交换友链，喵喵喵~
+> 「这世界很宽容，宽容到允许枪口抬高三公分，也宽容到每个人都能问心无愧地活着。没有人必须要求你爱这个世界，但我真心希望你能温柔地爱着自己。」
 
 
+## 投喂一下
 
-
-<p align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=YumeYuka&show_icons=true&bg_color=fff0f6,ffe4ec&title_color=ff69b4&text_color=ea4c89&icon_color=ffb6d5&border_color=ff69b4" alt="YumeYuka's GitHub stats" style="display:inline-block;vertical-align:middle;" />
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YumeYuka&layout=compact&hide=html&bg_color=fff0f6,ffe4ec&title_color=ff69b4&text_color=ea4c89&icon_color=ffb6d5&border_color=ff69b4" alt="Top Langs" style="display:inline-block;vertical-align:middle;" />
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/NightRainMilkyWay/NightRainMilkyWay/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NightRainMilkyWay/NightRainMilkyWay/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/NightRainMilkyWay/NightRainMilkyWay/output/github-contribution-grid-snake.svg">
-  </picture>
-</p>
-
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
-
-</div>
-
-::github{repo="YumeYuka/Blog"}
+![img.png](img.png)
